@@ -7,7 +7,7 @@
 		this.element = document.createElement('div');
 		this.element.style.width = '800px';
 		this.element.style.height = '800px';
-		this.element.style.background ='url(../images/background-tank-game.png) repeat';
+		this.element.style.background ='url(../TankWars/images/background-tank-game.png) repeat';
 
 		this.updateFrame = function() {
 			//If moving background is needed then use statements to move in move()
@@ -30,14 +30,14 @@
 		this.x=0;
 		this.y=0;
 
-		//this.heroDiv.style.background='url(../images/tank-spritesheet.png) no-repeat';
-		this.heroDiv.style.background='url(../images/tank-pointing-up.png) no-repeat';
+		//this.heroDiv.style.background='url(../TankWars/images//tank-spritesheet.png) no-repeat';
+		this.heroDiv.style.background='url(../TankWars/images/tank-pointing-up.png) no-repeat';
 		this.heroDiv.style.position='absolute';
 		this.heroDiv.setAttribute("id","hero-id");
 		
 
-		// var sprite../images=new spriteSheet();
-		// var spriteCoordinates = sprite../images.getSpriteCoordinates();
+		// var spriteimages=new spriteSheet();
+		// var spriteCoordinates = spriteimages.getSpriteCoordinates();
 		// this.spriteCounter = 0;
 
 		var that=this;
@@ -111,7 +111,7 @@
 		this.x=0;
 		this.y=0;
 
-		this.villainDiv.style.background='url(../images/enemy-tank-pointing-up.png) no-repeat';
+		this.villainDiv.style.background='url(../TankWars//TankWars/images/enemy-tank-pointing-up.png) no-repeat';
 		this.villainDiv.style.position='absolute';		
 		this.villainDiv.setAttribute("id","villain-id");
 		
@@ -171,7 +171,7 @@
 		this.x=0;
 		this.y=0;
 
-		this.shieldDiv.style.background='url(../images/shield.png) repeat-x';
+		this.shieldDiv.style.background='url(..//TankWars/images/shield.png) repeat-x';
 		this.shieldDiv.style.position='absolute';		
 		this.shieldDiv.setAttribute("id","shield-id");
 		
@@ -208,7 +208,7 @@
 			that.bulletDiv.style.width=that.width+'px';
 			that.bulletDiv.style.height=that.height+'px';
 			//that.bulletDiv.style.radius='10px';
-			that.bulletDiv.style.background='url(../images/bullet.png) no-repeat';
+			that.bulletDiv.style.background='url(..//TankWars/images/bullet.png) no-repeat';
 			that.bulletDiv.style.position='absolute';
 
 			that.bulletDiv.style.top=that.bulletY+'px';
@@ -261,7 +261,7 @@
 		this.x=0;
 		this.y=0;
 
-		this.suicideDiv.style.background='url(../images/enemy-tank-pointing-up.png) no-repeat';
+		this.suicideDiv.style.background='url(..//TankWars/images/enemy-tank-pointing-up.png) no-repeat';
 		this.suicideDiv.style.position='absolute';		
 		this.suicideDiv.setAttribute("id","suicide-id");
 
@@ -286,7 +286,7 @@
 		this.x=0;
 		this.y=0;
 
-		this.wallDiv.style.background='url(../images/wall.gif) repeat';
+		this.wallDiv.style.background='url(..//TankWars/images/wall.gif) repeat';
 		this.wallDiv.style.position='absolute';		
 		this.wallDiv.setAttribute("id","wall-id");
 		
@@ -313,7 +313,7 @@
 		this.x=0;
 		this.y=0;
 
-		this.steelDiv.style.background='url(../images/shield.png) repeat';
+		this.steelDiv.style.background='url(..//TankWars/images/shield.png) repeat';
 		this.steelDiv.style.position='absolute';		
 		this.steelDiv.setAttribute("id","steel-id");
 		
@@ -338,7 +338,7 @@
 		this.x=0;
 		this.y=0;
 
-		this.wormHoleDiv.style.background='url(../images/shield.png) repeat';
+		this.wormHoleDiv.style.background='url(..//TankWars/images/shield.png) repeat';
 		this.wormHoleDiv.style.position='absolute';		
 		this.wormHoleDiv.setAttribute("id","wormHole-id");
 		this.wormHoleDiv.innerHTML="wormhole";
@@ -363,7 +363,7 @@
 		this.x=0;
 		this.y=0;
 
-		this.awardDiv.style.background='url(../images/award1.png) no-repeat';
+		this.awardDiv.style.background='url(..//TankWars/images/award1.png) no-repeat';
 		this.awardDiv.style.position='absolute';		
 		this.awardDiv.setAttribute("id","award-id");
 		
@@ -673,7 +673,7 @@
 						// villain.y=-40;
 						villain.y=0;
 						villain.villainDirection=3;	
-						villain.villainDiv.style.background='url(../images/enemy-tank-pointing-down.png) no-repeat';			
+						villain.villainDiv.style.background='url(..//TankWars/images/enemy-tank-pointing-down.png) no-repeat';			
 						console.log("1.1");
 						map[0][7]=2;
 					}
@@ -682,7 +682,7 @@
 						// villain.y=-40;
 						villain.y=0;
 						villain.villainDirection=3;	
-						villain.villainDiv.style.background='url(../images/enemy-tank-pointing-down.png) no-repeat';			
+						villain.villainDiv.style.background='url(..//TankWars/images/enemy-tank-pointing-down.png) no-repeat';			
 						console.log("1.2");
 						map[0][8]=2;
 					}else if(map[0][6]==0){
@@ -690,7 +690,7 @@
 						//villain.y=-40;
 						villain.y=0;
 						villain.villainDirection=3;	
-						villain.villainDiv.style.background='url(../images/enemy-tank-pointing-down.png) no-repeat';			
+						villain.villainDiv.style.background='url(..//TankWars/images/enemy-tank-pointing-down.png) no-repeat';			
 						console.log("1.3");
 						map[0][6]=2;
 					}else{
@@ -698,7 +698,7 @@
 						villain.x=0;
 						villain.y=240;
 						villain.villainDirection=2;	
-						villain.villainDiv.style.background='url(../images/enemy-tank-pointing-right.png) no-repeat';			
+						villain.villainDiv.style.background='url(..//TankWars/images/enemy-tank-pointing-right.png) no-repeat';			
 						console.log("1.4");
 						map[6][0]=2;
 					}
@@ -712,7 +712,7 @@
 							villain.x=gameProps.width-villain.width;
 							villain.y=0;
 							villain.villainDirection=4;	
-							villain.villainDiv.style.background='url(../images/enemy-tank-pointing-left.png) no-repeat';			
+							villain.villainDiv.style.background='url(..//TankWars/images/enemy-tank-pointing-left.png) no-repeat';			
 							console.log("2.1");
 							map[0][14]=2;
 						}else if(map[8][14]==0){
@@ -720,7 +720,7 @@
 							villain.x=gameProps.width-villain.width;
 							villain.y=320;
 							villain.villainDirection=4;	
-							villain.villainDiv.style.background='url(../images/enemy-tank-pointing-left.png) no-repeat';			
+							villain.villainDiv.style.background='url(..//TankWars/images/enemy-tank-pointing-left.png) no-repeat';			
 							console.log("2.2");
 							map[8][14]=2;
 						}else{
@@ -728,7 +728,7 @@
 							villain.x=0;
 							villain.y=240;
 							villain.villainDirection=2;	
-							villain.villainDiv.style.background='url(../images/enemy-tank-pointing-right.png) no-repeat';			
+							villain.villainDiv.style.background='url(..//TankWars/images/enemy-tank-pointing-right.png) no-repeat';			
 							console.log("2.3");
 							map[6][0]=2;
 						}
@@ -738,7 +738,7 @@
 							villain.x=gameProps.width-villain.width;
 							villain.y=320;
 							villain.villainDirection=4;	
-							villain.villainDiv.style.background='url(../images/enemy-tank-pointing-left.png) no-repeat';			
+							villain.villainDiv.style.background='url(..//TankWars/images/enemy-tank-pointing-left.png) no-repeat';			
 							console.log("2.2");
 							map[8][14]=2;
 						}else if(map[0][14]==0){
@@ -746,7 +746,7 @@
 							villain.x=gameProps.width-villain.width;
 							villain.y=0;
 							villain.villainDirection=4;	
-							villain.villainDiv.style.background='url(../images/enemy-tank-pointing-left.png) no-repeat';			
+							villain.villainDiv.style.background='url(..//TankWars/images/enemy-tank-pointing-left.png) no-repeat';			
 							console.log("2.1");
 							map[0][14]=2;
 						}else{
@@ -754,7 +754,7 @@
 							villain.x=0;
 							villain.y=240;
 							villain.villainDirection=2;	
-							villain.villainDiv.style.background='url(../images/enemy-tank-pointing-right.png) no-repeat';			
+							villain.villainDiv.style.background='url(..//TankWars/images/enemy-tank-pointing-right.png) no-repeat';			
 							console.log("2.3");
 							map[6][0]=2;
 						}
@@ -768,7 +768,7 @@
 							villain.x=0;
 							villain.y=0;
 							villain.villainDirection=2;	
-							villain.villainDiv.style.background='url(../images/enemy-tank-pointing-right.png) no-repeat';			
+							villain.villainDiv.style.background='url(..//TankWars/images/enemy-tank-pointing-right.png) no-repeat';			
 							console.log("3.1");
 							map[0][0]=2;
 						}else if(map[8][0]==0){
@@ -776,7 +776,7 @@
 							villain.x=0;
 							villain.y=320;
 							villain.villainDirection=2;	
-							villain.villainDiv.style.background='url(../images/enemy-tank-pointing-right.png) no-repeat';			
+							villain.villainDiv.style.background='url(..//TankWars/images/enemy-tank-pointing-right.png) no-repeat';			
 							console.log("3.2");
 							map[0][8]=2;
 						}else{
@@ -784,7 +784,7 @@
 							villain.x=0;
 							villain.y=240;
 							villain.villainDirection=2;	
-							villain.villainDiv.style.background='url(../images/enemy-tank-pointing-right.png) no-repeat';			
+							villain.villainDiv.style.background='url(..//TankWars/images/enemy-tank-pointing-right.png) no-repeat';			
 							console.log("3.3");
 							map[6][0]=2;
 						}
@@ -794,7 +794,7 @@
 							villain.x=0;
 							villain.y=320;
 							villain.villainDirection=4;	
-							villain.villainDiv.style.background='url(../images/enemy-tank-pointing-left.png) no-repeat';			
+							villain.villainDiv.style.background='url(..//TankWars/images/enemy-tank-pointing-left.png) no-repeat';			
 							console.log("2.2");
 							map[0][8]=2;
 						}else if(map[0][0]==0){
@@ -802,7 +802,7 @@
 							villain.x=0;
 							villain.y=0;
 							villain.villainDirection=4;	
-							villain.villainDiv.style.background='url(../images/enemy-tank-pointing-left.png) no-repeat';			
+							villain.villainDiv.style.background='url(..//TankWars/images/enemy-tank-pointing-left.png) no-repeat';			
 							console.log("2.1");
 							map[0][0]=2;
 						}else{
@@ -810,7 +810,7 @@
 							villain.x=0;
 							villain.y=240;
 							villain.villainDirection=2;	
-							villain.villainDiv.style.background='url(../images/enemy-tank-pointing-right.png) no-repeat';			
+							villain.villainDiv.style.background='url(..//TankWars/images/enemy-tank-pointing-right.png) no-repeat';			
 							console.log("2.3");
 							map[6][0]=2;
 						}
@@ -1169,7 +1169,7 @@
 					hero.height=40;
 					hero.width=40;
 					console.log(hero.x+'    '+hero.y);
-					hero.heroDiv.style.background='url(../images/tank-pointing-up.png) no-repeat';
+					hero.heroDiv.style.background='url(..//TankWars/images/tank-pointing-up.png) no-repeat';
 				}
 				hero.heroSetup();
 				fixHeightWidth(1);
@@ -1181,7 +1181,7 @@
 						villain.villainDirection=1;
 						villain.height=40;
 						villain.width=40;
-						villain.villainDiv.style.background='url(../images/enemy-tank-pointing-up.png) no-repeat';
+						villain.villainDiv.style.background='url(..//TankWars/images/enemy-tank-pointing-up.png) no-repeat';
 					}
 						villain.villainSetup();
 						fixHeightWidth();
@@ -1353,7 +1353,7 @@
 						hero.height=40;
 						hero.width=40;
 						console.log(hero.x+'    '+hero.y);
-						hero.heroDiv.style.background='url(../images/tank-pointing-down.png) no-repeat';
+						hero.heroDiv.style.background='url(..//TankWars/images/tank-pointing-down.png) no-repeat';
 					}
 					hero.heroSetup();
 					fixHeightWidth(1);
@@ -1365,7 +1365,7 @@
 							villain.villainDirection=3;
 							villain.height=40;
 							villain.width=40;
-							villain.villainDiv.style.background='url(../images/enemy-tank-pointing-down.png) no-repeat';
+							villain.villainDiv.style.background='url(..//TankWars/images/enemy-tank-pointing-down.png) no-repeat';
 						}
 						villain.villainSetup();
 						fixHeightWidth();
@@ -1540,7 +1540,7 @@
 						hero.width=40;
 						//hero.y=hero.y+13;		//After rotation to fix the hero.y
 						console.log(hero.x+'    '+hero.y);
-						hero.heroDiv.style.background='url(../images/tank-pointing-left.png) no-repeat';
+						hero.heroDiv.style.background='url(..//TankWars/images/tank-pointing-left.png) no-repeat';
 					}
 					hero.heroSetup();
 					fixHeightWidth(1);
@@ -1551,7 +1551,7 @@
 						villain.villainDirection=4;
 						villain.height=40;
 						villain.width=40;
-						villain.villainDiv.style.background='url(../images/enemy-tank-pointing-left.png) no-repeat';
+						villain.villainDiv.style.background='url(..//TankWars/images/enemy-tank-pointing-left.png) no-repeat';
 					}				
 					villain.villainSetup();
 					fixHeightWidth();
@@ -1725,7 +1725,7 @@
 						hero.width=40;
 						//hero.y=hero.y+13;	
 						console.log(hero.x+'    '+hero.y);
-						hero.heroDiv.style.background='url(../images/tank-pointing-right.png) no-repeat';
+						hero.heroDiv.style.background='url(..//TankWars/images/tank-pointing-right.png) no-repeat';
 					}
 				hero.heroSetup();
 				fixHeightWidth(1);
@@ -1736,7 +1736,7 @@
 						villain.villainDirection=2;
 						villain.height=40;
 						villain.width=40;
-						villain.villainDiv.style.background='url(../images/enemy-tank-pointing-right.png) no-repeat';
+						villain.villainDiv.style.background='url(..//TankWars/images/enemy-tank-pointing-right.png) no-repeat';
 					}
 					villain.villainSetup();
 					fixHeightWidth();
