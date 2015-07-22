@@ -1,6 +1,5 @@
 ;(function(){
 	'use strict';
-
 	function GameStart(getDiv_){
 		this.containerDiv=getDiv_;
 		var background=new Background();
@@ -8,6 +7,7 @@
 			width: 600,
 			height: 600
 		};
+		var startgame=false;
 
 		var that=this;
 
@@ -26,18 +26,11 @@
 			text.id='logo';
 			var textscroller=document.createElement('marquee');
 			textscroller.scrollAmount="15";
-			// var image=document.createElement('img');
-			// image.src="../TankWars/images/tank-pointing-left.png";
-			// textscroller.appendChild(image);
-			textscroller.innerHTML='<img src="../TankWars/images/tank-pointing-left.png">	T A N K  - W A R	 	<img src="../TankWars/images/enemy-tank-pointing-right.png">';
-			// var image=document.createElement('img');
-			// image.src="../TankWars/images/enemy-tank-pointing-right.png";
-			// textscroller.appendChild(image);
+			textscroller.innerHTML='<img src="../TankWars/images/tank-pointing-left.png">	T A N K  - W A R	 	<img src="../TankWars/images/enemy-tank-pointing-right.png">';			
 			text.style.position='absolute';
 			text.style.top='57px';
 			text.style.left='0px';
 			text.style.fontFamily = "Brush Script MT, cursive";
-			//text.innerHTML='TANK WORLD';
 			text.style.color='#849500';
 			text.style.fontSize='97px';
 			text.style.fontWeight='bold';
@@ -88,38 +81,38 @@
 			start.onclick=Start;
 
 
-			var settings=document.createElement('div');
-			settings.style.width='200px';
-			settings.style.height='30px';
-			settings.style.position='absolute';
-			settings.style.backgroundColor='#654e3e';
-			settings.style.lineHeight='30px';
-			settings.style.textAlign='center';
-			settings.style.top='400px';
-			settings.style.left='200px';
-			settings.style.fontFamily = "Brush Script MT, cursive";
-			settings.style.fontWeight='bold';
-			settings.style.color='#849500';
-			settings.innerHTML='S E T T I N G S';
-			settings.style.border="double 1px #95908c";
-			settings.style.mozBorderRadius=" 5px";
-			settings.style.webkitBorderRadius="5px";
-			settings.style.borderRadius="5px";
-			settings.id='settings';
+			// var settings=document.createElement('div');
+			// settings.style.width='200px';
+			// settings.style.height='30px';
+			// settings.style.position='absolute';
+			// settings.style.backgroundColor='#654e3e';
+			// settings.style.lineHeight='30px';
+			// settings.style.textAlign='center';
+			// settings.style.top='400px';
+			// settings.style.left='200px';
+			// settings.style.fontFamily = "Brush Script MT, cursive";
+			// settings.style.fontWeight='bold';
+			// settings.style.color='#849500';
+			// settings.innerHTML='S E T T I N G S';
+			// settings.style.border="double 1px #95908c";
+			// settings.style.mozBorderRadius=" 5px";
+			// settings.style.webkitBorderRadius="5px";
+			// settings.style.borderRadius="5px";
+			// settings.id='settings';
 
-			that.containerDiv.appendChild(settings);
+			// that.containerDiv.appendChild(settings);
 
-			settings.onmouseover=function(){
-				settings.style.backgroundColor='#ffbf14';	
-				settings.style.color='white';
+			// settings.onmouseover=function(){
+			// 	settings.style.backgroundColor='#ffbf14';	
+			// 	settings.style.color='white';
 
 
-			};
-			settings.onmouseout=function(){
-				settings.style.backgroundColor='#654e3e';
-				settings.style.color='#849500';
-			};
-			settings.onclick=Settings;
+			// };
+			// settings.onmouseout=function(){
+			// 	settings.style.backgroundColor='#654e3e';
+			// 	settings.style.color='#849500';
+			// };
+			// settings.onclick=Settings;
 
 			var howtoplay=document.createElement('div');
 			howtoplay.style.width='200px';
@@ -145,8 +138,6 @@
 			howtoplay.onmouseover=function(){
 				howtoplay.style.backgroundColor='#ffbf14';	
 				howtoplay.style.color='white';
-
-
 			};
 			howtoplay.onmouseout=function(){
 				howtoplay.style.backgroundColor='#654e3e';
@@ -154,41 +145,40 @@
 			};
 			howtoplay.onclick=HowToPlay;
 
-			var highscore=document.createElement('div');
-			highscore.style.width='200px';
-			highscore.style.height='30px';
-			highscore.style.position='absolute';
-			highscore.style.backgroundColor='#654e3e';
-			highscore.style.lineHeight='30px';
-			highscore.style.textAlign='center';
-			highscore.style.top='500px';
-			highscore.style.left='200px';
-			highscore.style.fontFamily = "Brush Script MT, cursive";
-			highscore.style.fontWeight='bold';
-			highscore.style.color='#849500';
-			highscore.innerHTML='H I G H  S C O R E';
-			highscore.style.border="double 1px #95908c";
-			highscore.style.mozBorderRadius=" 5px";
-			highscore.style.webkitBorderRadius="5px";
-			highscore.style.borderRadius="5px";
-			highscore.id='highscore';
-			highscore.onclick=function(){
-				alert("hello");
-			};
+			// var highscore=document.createElement('div');
+			// highscore.style.width='200px';
+			// highscore.style.height='30px';
+			// highscore.style.position='absolute';
+			// highscore.style.backgroundColor='#654e3e';
+			// highscore.style.lineHeight='30px';
+			// highscore.style.textAlign='center';
+			// highscore.style.top='500px';
+			// highscore.style.left='200px';
+			// highscore.style.fontFamily = "Brush Script MT, cursive";
+			// highscore.style.fontWeight='bold';
+			// highscore.style.color='#849500';
+			// highscore.innerHTML='H I G H  S C O R E';
+			// highscore.style.border="double 1px #95908c";
+			// highscore.style.mozBorderRadius=" 5px";
+			// highscore.style.webkitBorderRadius="5px";
+			// highscore.style.borderRadius="5px";
+			// highscore.id='highscore';
+			// highscore.onclick=function(){
+			// };
 
-			that.containerDiv.appendChild(highscore);		
+			// that.containerDiv.appendChild(highscore);		
 
-			highscore.onmouseover=function(){
-				highscore.style.backgroundColor='#ffbf14';	
-				highscore.style.color='white';
+			// highscore.onmouseover=function(){
+			// 	highscore.style.backgroundColor='#ffbf14';	
+			// 	highscore.style.color='white';
 
 
-			};
-			highscore.onmouseout=function(){
-				highscore.style.backgroundColor='#654e3e';
-				highscore.style.color='#849500';
-			};	
-			highscore.onclick=HighScore;
+			// };
+			// highscore.onmouseout=function(){
+			// 	highscore.style.backgroundColor='#654e3e';
+			// 	highscore.style.color='#849500';
+			// };	
+			// highscore.onclick=HighScore;
 
 		};
 
@@ -199,8 +189,8 @@
 		function Start(){
 			that.containerDiv.removeChild((document.getElementById('logo')));
 			that.containerDiv.removeChild((document.getElementById('start')));
-			that.containerDiv.removeChild((document.getElementById('settings')));
-			that.containerDiv.removeChild((document.getElementById('highscore')));
+			//that.containerDiv.removeChild((document.getElementById('settings')));
+			//that.containerDiv.removeChild((document.getElementById('highscore')));
 			that.containerDiv.removeChild((document.getElementById('howtoplay')));
 
 			var load=document.createElement('div');
@@ -233,145 +223,147 @@
 			setTimeout(function(){
 				that.containerDiv.removeChild((document.getElementById('load')));
 				that.containerDiv.removeChild((document.getElementById('loadMessage')));
+
+				//startgame=true;
+
 				
-				var Gameplay=new Gameplay(that.containerDiv);
-				
+				var gameplay=new Gameplay(that.containerDiv);
 
 			},3000);
 
 
 		};
-		function Settings(){
-			that.containerDiv.removeChild((document.getElementById('start')));
-			that.containerDiv.removeChild((document.getElementById('settings')));
-			that.containerDiv.removeChild((document.getElementById('highscore')));
-			that.containerDiv.removeChild((document.getElementById('howtoplay')));
+		// function Settings(){
+		// 	that.containerDiv.removeChild((document.getElementById('start')));
+		// 	that.containerDiv.removeChild((document.getElementById('settings')));
+		// 	that.containerDiv.removeChild((document.getElementById('highscore')));
+		// 	that.containerDiv.removeChild((document.getElementById('howtoplay')));
 
-			var speakeron=document.createElement('div');
-				speakeron.style.position='absolute';
-				speakeron.style.width='auto';
-				speakeron.style.height='50px';
-				speakeron.style.top="300px";
-				speakeron.style.left="50px";
-				speakeron.style.fontSize="20px";
-				speakeron.innerHTML="S O U N D S ::";
-				speakeron.style.fontWeight="bold";
-				speakeron.style.fontFamily = "Brush Script MT, cursive";
-				speakeron.style.float='left';
-				speakeron.id="speakeron";
-				speakeron.style.marginRight='50px';
-				that.containerDiv.appendChild(speakeron);
+		// 	var speakeron=document.createElement('div');
+		// 		speakeron.style.position='absolute';
+		// 		speakeron.style.width='auto';
+		// 		speakeron.style.height='50px';
+		// 		speakeron.style.top="300px";
+		// 		speakeron.style.left="50px";
+		// 		speakeron.style.fontSize="20px";
+		// 		speakeron.innerHTML="S O U N D S ::";
+		// 		speakeron.style.fontWeight="bold";
+		// 		speakeron.style.fontFamily = "Brush Script MT, cursive";
+		// 		speakeron.style.float='left';
+		// 		speakeron.id="speakeron";
+		// 		speakeron.style.marginRight='50px';
+		// 		that.containerDiv.appendChild(speakeron);
 
-				var checkboxes1=document.createElement('input');
-				checkboxes1.setAttribute("type", "radio");
-				checkboxes1.setAttribute("name","checkOnOff");
-				checkboxes1.setAttribute("value","on");
-				checkboxes1.style.width="50px";
-				checkboxes1.style.marginLeft='20px';
-				checkboxes1.style.marginRight='5px';
-				checkboxes1.id="checkbox1";
+		// 		var checkboxes1=document.createElement('input');
+		// 		checkboxes1.setAttribute("type", "radio");
+		// 		checkboxes1.setAttribute("name","checkOnOff");
+		// 		checkboxes1.setAttribute("value","on");
+		// 		checkboxes1.style.width="50px";
+		// 		checkboxes1.style.marginLeft='20px';
+		// 		checkboxes1.style.marginRight='5px';
+		// 		checkboxes1.id="checkbox1";
 
-				speakeron.appendChild(checkboxes1);
+		// 		speakeron.appendChild(checkboxes1);
 
-				var label1=document.createElement('label');
-				label1.for="checkboxes1";
-				label1.innerHTML="O N"
-				label1.style.marginRight="5	0px";
-				speakeron.appendChild(label1);
-
-
-				var checkboxes2=document.createElement('input');
-				checkboxes2.setAttribute("type", "radio");
-				checkboxes2.setAttribute("name","checkOnOff");
-					checkboxes2.setAttribute("value","off");
-					checkboxes2.style.marginLeft="100px";
-					checkboxes2.style.marginRight='20px';
-					checkboxes2.id="checkbox2";
-
-					speakeron.appendChild(checkboxes2);
-					var label2=document.createElement('label');
-					label2.for="checkboxes1";
-					label2.innerHTML="O F F"
-					speakeron.appendChild(label2);
-
-				var ok=document.createElement('div');
-			ok.style.width='50px';
-			ok.style.height='30px';
-			ok.style.position='absolute';
-			ok.style.backgroundColor='#654e3e';
-			ok.style.lineHeight='30px';
-			ok.style.textAlign='center';
-			ok.style.top='40px';
-			ok.style.left='200px';
-			ok.style.fontFamily = "Brush Script MT, cursive";
-			ok.style.fontWeight='bold';
-			ok.style.color='#849500';
-			ok.innerHTML='O K';
-			ok.style.border="double 1px #95908c";
-			ok.style.mozBorderRadius=" 5px";
-			ok.style.webkitBorderRadius="5px";
-			ok.style.borderRadius="5px";
-			ok.id='ok';	
-
-			speakeron.appendChild(ok);
-
-			ok.onmouseover=function(){
-				ok.style.backgroundColor='#ffbf14';	
-				ok.style.color='white';
+		// 		var label1=document.createElement('label');
+		// 		label1.for="checkboxes1";
+		// 		label1.innerHTML="O N"
+		// 		label1.style.marginRight="5	0px";
+		// 		speakeron.appendChild(label1);
 
 
-			};
-			ok.onmouseout=function(){
-				ok.style.backgroundColor='#654e3e';
-				ok.style.color='#849500';
-			};	
-			ok.onclick=function(){
-				that.containerDiv.removeChild((document.getElementById('speakeron')));
-				menus();
-				//on ok Set the values of sounds 
-			};	
-				var back=document.createElement('div');
-			back.style.width='100px';
-			back.style.height='30px';
-			back.style.position='absolute';
-			back.style.backgroundColor='#654e3e';
-			back.style.lineHeight='30px';
-			back.style.textAlign='center';
-			back.style.top='40px';
-			back.style.left='400px';
-			back.style.fontFamily = "Brush Script MT, cursive";
-			back.style.fontWeight='bold';
-			back.style.color='#849500';
-			back.innerHTML='B A C K';
-			back.style.border="double 1px #95908c";
-			back.style.mozBorderRadius=" 5px";
-			back.style.webkitBorderRadius="5px";
-			back.style.borderRadius="5px";
-			back.id='back';	
+		// 		var checkboxes2=document.createElement('input');
+		// 		checkboxes2.setAttribute("type", "radio");
+		// 		checkboxes2.setAttribute("name","checkOnOff");
+		// 			checkboxes2.setAttribute("value","off");
+		// 			checkboxes2.style.marginLeft="100px";
+		// 			checkboxes2.style.marginRight='20px';
+		// 			checkboxes2.id="checkbox2";
 
-			speakeron.appendChild(back);
+		// 			speakeron.appendChild(checkboxes2);
+		// 			var label2=document.createElement('label');
+		// 			label2.for="checkboxes1";
+		// 			label2.innerHTML="O F F"
+		// 			speakeron.appendChild(label2);
 
-			back.onmouseover=function(){
-				back.style.backgroundColor='#ffbf14';	
-				back.style.color='white';
+		// 		var ok=document.createElement('div');
+		// 	ok.style.width='50px';
+		// 	ok.style.height='30px';
+		// 	ok.style.position='absolute';
+		// 	ok.style.backgroundColor='#654e3e';
+		// 	ok.style.lineHeight='30px';
+		// 	ok.style.textAlign='center';
+		// 	ok.style.top='40px';
+		// 	ok.style.left='200px';
+		// 	ok.style.fontFamily = "Brush Script MT, cursive";
+		// 	ok.style.fontWeight='bold';
+		// 	ok.style.color='#849500';
+		// 	ok.innerHTML='O K';
+		// 	ok.style.border="double 1px #95908c";
+		// 	ok.style.mozBorderRadius=" 5px";
+		// 	ok.style.webkitBorderRadius="5px";
+		// 	ok.style.borderRadius="5px";
+		// 	ok.id='ok';	
+
+		// 	speakeron.appendChild(ok);
+
+		// 	ok.onmouseover=function(){
+		// 		ok.style.backgroundColor='#ffbf14';	
+		// 		ok.style.color='white';
 
 
-			};
-			back.onmouseout=function(){
-				back.style.backgroundColor='#654e3e';
-				back.style.color='#849500';
-			};	
-			back.onclick=function(){
-				that.containerDiv.removeChild((document.getElementById('speakeron')));
-				menus();
-									//on back do not make changes
-			};
+		// 	};
+		// 	ok.onmouseout=function(){
+		// 		ok.style.backgroundColor='#654e3e';
+		// 		ok.style.color='#849500';
+		// 	};	
+		// 	ok.onclick=function(){
+		// 		that.containerDiv.removeChild((document.getElementById('speakeron')));
+		// 		menus();
+		// 		//on ok Set the values of sounds 
+		// 	};	
+		// 		var back=document.createElement('div');
+		// 	back.style.width='100px';
+		// 	back.style.height='30px';
+		// 	back.style.position='absolute';
+		// 	back.style.backgroundColor='#654e3e';
+		// 	back.style.lineHeight='30px';
+		// 	back.style.textAlign='center';
+		// 	back.style.top='40px';
+		// 	back.style.left='400px';
+		// 	back.style.fontFamily = "Brush Script MT, cursive";
+		// 	back.style.fontWeight='bold';
+		// 	back.style.color='#849500';
+		// 	back.innerHTML='B A C K';
+		// 	back.style.border="double 1px #95908c";
+		// 	back.style.mozBorderRadius=" 5px";
+		// 	back.style.webkitBorderRadius="5px";
+		// 	back.style.borderRadius="5px";
+		// 	back.id='back';	
 
-		};
+		// 	speakeron.appendChild(back);
+
+		// 	back.onmouseover=function(){
+		// 		back.style.backgroundColor='#ffbf14';	
+		// 		back.style.color='white';
+
+
+		// 	};
+		// 	back.onmouseout=function(){
+		// 		back.style.backgroundColor='#654e3e';
+		// 		back.style.color='#849500';
+		// 	};	
+		// 	back.onclick=function(){
+		// 		that.containerDiv.removeChild((document.getElementById('speakeron')));
+		// 		menus();
+		// 							//on back do not make changes
+		// 	};
+
+		// };
 		function HowToPlay(){
 			that.containerDiv.removeChild((document.getElementById('start')));
-			that.containerDiv.removeChild((document.getElementById('settings')));
-			that.containerDiv.removeChild((document.getElementById('highscore')));
+			//that.containerDiv.removeChild((document.getElementById('settings')));
+			//that.containerDiv.removeChild((document.getElementById('highscore')));
 			that.containerDiv.removeChild((document.getElementById('howtoplay')));
 
 			var help=document.createElement('div');
@@ -460,6 +452,7 @@
 			menus();
 		};
 
+
 	};
 
 
@@ -476,7 +469,6 @@
 
 			// move();
 			// render();
-			// console.log("background created");
 		};
 
 	};
@@ -504,7 +496,6 @@
 		var that=this;
 
 		// var updateHeroImage = function(){
-		// 	console.log(that.spriteCounter);
 
 		// 		var cord = spriteCoordinates[that.spriteCounter+1];
 		// 		that.heroDiv.style.backgroundPosition = '-' + cord.xCord + 'px -' + cord.yCord + 'px';
@@ -594,7 +585,7 @@
 	function mainVillain(){
 		this.mainVillainDiv=document.createElement('div');
 		this.height=200;
-		this.width=200;
+		this.width=160;
 		this.mainvillainDirection=0;
 
 		this.x=0;
@@ -618,7 +609,7 @@
 	function villainShield(){
 		this.shieldDiv=document.createElement('div');
 		this.height=20;
-		this.width=200;			//Shield's width is equal to width of main-villain to prevent the bullet hitting main villain
+		this.width=160;			//Shield's width is equal to width of main-villain to prevent the bullet hitting main villain
 		this.mainvillainDirection=0;
 
 		this.x=0;
@@ -652,8 +643,6 @@
 		this.whoseBullet=0;	//!->hero 2->villain 3->mainvillain
 		this.bulletid=0;
 		this.bulletDiv=document.createElement('div');
-			// var bulletY=hero.y;
-			// var bulletX=(hero.x+(hero.width/2));
 		this.createBullet=function(x,y){
 			this.bulletY=y;
 			this.bulletX=x;
@@ -661,7 +650,6 @@
 			this.bulletDiv.setAttribute("id", "bullet-id");
 			that.bulletDiv.style.width=that.width+'px';
 			that.bulletDiv.style.height=that.height+'px';
-			//that.bulletDiv.style.radius='10px';
 			that.bulletDiv.style.background='url(../TankWars/images/bullet.png) no-repeat';
 			that.bulletDiv.style.position='absolute';
 
@@ -835,11 +823,11 @@
 	 };
 	function Gameplay(getDiv_){
 		var gameStart=false;
-		this.gameDiv=getDiv_;
+		var gameDiv=getDiv_;
 		var background=new Background();
 		var hero=new Hero();
 		var heroDirection=1;				//Default is up		
-		var interval=30;
+		var interval=100;
 
 		var bulletFlag=0;
 		var heroBullets=[];
@@ -879,10 +867,10 @@
 				[0 ,6 ,0 , 0, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0, 0],
 				[0 ,6 ,6 , 5, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0],
 				[0, 0 ,0 , 0, 0, 0, 5, 6, 0, 0, 0, 6, 0, 6, 6],
-				[0 ,0 ,0 , 0, 0, 6, 0, 6, 0, 0, 0, 0, 0, 0, 0],
+				[0 ,0 ,0 , 0, 0, 6, 0, 6, 5, 0, 0, 0, 0, 0, 0],
 				[6 ,6 ,6 , 5, 0, 0, 0, 0, 6, 0, 5, 0, 6, 5, 0],
 				[0 ,0 ,0 , 0, 0, 6, 0, 6, 0, 7, 6, 0, 0, 6, 0],
-				[0 ,0 ,0 , 0, 6, 0, 0, 6, 6, 6, 6, 0, 0, 0, 0],
+				[0 ,0 ,0 , 0, 6, 0, 0, 5, 6, 6, 6, 0, 0, 0, 0],
 				[0 ,5 ,6 , 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 6, 0],
 				[0 ,6 ,0 , 5, 0, 6, 0, 0, 0, 6, 0, 5, 0, 0, 6],
 				[0 ,5 ,6 , 0, 6, 0, 0, 1, 0, 0, 6, 0, 0, 0, 5],
@@ -890,7 +878,7 @@
 				[6 ,0 ,0 , 0, 6, 0, 6, 8, 6, 0, 0, 0, 0, 6, 6],
 				
 				];		
-
+		var map1=map;		
 
 				//Set numbers respective to objets on array after creation of any objects
 
@@ -901,33 +889,32 @@
 
 		var notallowedtoMove=[];
 		
-		mainvillain.mainvillainDirection=2;
+		mainvillain.mainvillainDirection=4;
 		var hits=0;
 
 		function level2(){
 			villainBullets=[];
 			var timer=0;
-			var interval1=30;
-
-			// var randstart=(Math.floor(Math.random()*2+1))%2;
-			// if(randstart===0){
-			// 	mainvillain.mainvillainDirection==2;
-			// }else{
-			// 	mainvillain.mainvillainDirection==4;
-			// }
+			var interval1=80;
+			var initialmove=false;
+			var movecount=0;
 			var move=function(){
-				var rand=(Math.random()*2);
-				if(rand>=0 && rand<1){
-					mainvillainFired=false;
+				if(initialmove){
+					var rand=(Math.random()*2);
+					if(rand>=0 && rand<1){
+						mainvillainFired=false;
 
-				}else{
-					mainvillainFired=true;
+					}else{
+						mainvillainFired=true;
+					}
 				}
-				if(mainvillain.mainvillainDirection==2&&(mainvillain.x<(gameProps.width-mainvillain.width))){
+				
+				if((mainvillain.mainvillainDirection==2) && (mainvillain.x<(gameProps.width-mainvillain.width))){
 					moveRight(11);
 					shield.shieldSetup();
 					if(mainvillain.x>=(gameProps.width-mainvillain.width)){
 						mainvillain.mainvillainDirection=4;
+						movecount++;
 						if(timer==5){
 							timer=0;
 						}else{
@@ -937,58 +924,91 @@
 					if(mainvillainFired){
 						if(timer<5){
 							fireBullet();
+							
+
 						}
 					}
 				}					
-				else if(mainvillain.mainvillainDirection==4&&mainvillain.x>0){
+				else if((mainvillain.mainvillainDirection==4) && (mainvillain.x>0)){
 					moveLeft(11);
 					shield.shieldSetup();
 					if(mainvillain.x<=0){
-						mainvillain.mainvillainDirection=2;						
-						if(timer==5){
-							timer=0;
-						}else{
-							timer++;
-						}
+						mainvillain.mainvillainDirection=2;
+						movecount++;						
 					}
 					if(mainvillainFired){
 						if(timer<5){
 							fireBullet();
+							
 						}
 					}
 				}
-				
-				//window.requestAnimationFrame(move);
+				if(movecount>=2){
+					initialmove=true;
+				}
+				detectBombBlasts();
 							
 			};	
-
-			var repeater=function(){		
-					if(shieldcount==1){
-						interval1=30;
-						console.log("404040404040400440")				
-					}
-					else if(shieldcount==0){
-						//clearInterval(movemainVillain);
-						interval1=interval1-20;
-						console.log("202020202020202020200202020202");
-						if(hits>2){
-							//clearInterval(movemainVillain);
-							interval1=interval1-10;
-
-							console.log("10101010010101010101");
-
+			var movemainVillain=setInterval(move,80);
+		};
+		var detectBombBlasts=function(){
+			if(fightmainvillainFlag){				
+				 for( var i =0; i< heroBullets.length; i++){
+				 	if(shieldcount==0){
+						if(((mainvillain.x+mainvillain.width)>=(heroBullets[i].bulletX+heroBullets[i].width))&&(heroBullets[i].bulletX>=mainvillain.x)){
+							if(((heroBullets[i].bulletY+heroBullets[i].height)<=mainvillain.y)||((mainvillain.y+mainvillain.height)>=heroBullets[i].bulletY)){
+								hits++;	
+								gameDiv.removeChild(heroBullets[i].bulletDiv);									 	
+								var j=findBulletById(heroBullets,heroBullets[i].id);									
+								heroBullets.splice(j,1);
+								if(hits>=5){
+									alert("Congratulations!!You've won the game. Press OK to play again");
+									window.location.reload();	
+									gameDiv.removeChild(mainVillain.mainVillainDiv);
+									delete mainVillain.width;
+									delete mainVillain.height;
+									delete mainVillain.x;
+									delete mainVillain.y;
+									
+								}	
+							}
+						}					
+					}else if(shieldcount==1){
+						if(((mainvillain.x+mainvillain.width)>=(heroBullets[i].bulletX+heroBullets[i].width))&&(heroBullets[i].bulletX>=mainvillain.x)){
+							if(((heroBullets[i].bulletY+heroBullets[i].height)<=(mainvillain.y+20))||((mainvillain.y+mainvillain.height+20)>=heroBullets[i].bulletY)||((heroBullets[i].bulletY+heroBullets[i].height)<=mainvillain.y)||((mainvillain.y+mainvillain.height)>=heroBullets[i].bulletY)){
+								hits++;					
+								gameDiv.removeChild(heroBullets[i].bulletDiv);									 	
+								var j=findBulletById(heroBullets,heroBullets[i].id);									
+								heroBullets.splice(j,1);
+								if(hits==5){
+									mainvillain.mainVillainDiv.removeChild(shield.shieldDiv);
+									alert("Villain Shield Has Been Depleted. Keep Going")
+									delete shield.width;
+									delete shield.height;
+									delete shield.x;
+									delete shield.y;									
+									shieldcount=0;
+									hits=0;
+								}	
+							}
 						}
 					}
-
-				var movemainVillain=setInterval(move,interval1);
-			
-				//window.requestAnimationFrame(move);
-
-			}();
-
-			
+				}	
+				for( var i =0; i< villainBullets.length; i++){
+					if(((hero.x+hero.width)>=(villainBullets[i].bulletX+villainBullets[i].width))&&(villainBullets[i].bulletX>=hero.x)){
+						if(((villainBullets[i].bulletY+villainBullets[i].height)>=hero.y)||((hero.y+hero.height)<=villainBullets[i].bulletY)){
+						alert("Sorry :(!!You've lost the game. Press OK to play again");
+						window.location.reload();					
+						gameDiv.removeChild(hero.heroDiv);
+						gameDiv.removeChild(villainBullets[i].bulletDiv);									 	
+						var j=findBulletById(villainBullets,villainBullets[i].id);									
+						villainBullets.splice(j,1);	
+											
+						}
+					}	
+				}
+			}	
 		};
-	
 		function GenerateBulletId(flag){
 			var max = 0;
 			if(flag==1){
@@ -1024,7 +1044,7 @@
 
 		function createWall(x,y){
 			var wall=new Wall();		
-			that.gameDiv.appendChild(wall.wallDiv);
+			gameDiv.appendChild(wall.wallDiv);
 
 			//walls.push(wall);
 
@@ -1042,7 +1062,7 @@
 		};
 		function createSteel(x,y){
 			var steel=new Steel();		
-			that.gameDiv.appendChild(steel.steelDiv);
+			gameDiv.appendChild(steel.steelDiv);
 
 			notallowedtoMove.push(steel);
 
@@ -1058,7 +1078,7 @@
 		function createTunnel(x,y){
 			var tunnel=new Tunnel();		
 
-			that.gameDiv.appendChild(tunnel.tunnelDiv);
+			gameDiv.appendChild(tunnel.tunnelDiv);
 
 			function rendertunnel(){
 				tunnel.x = x*40;
@@ -1072,7 +1092,7 @@
 		function createaward(x,y){		
 
 			var award=new Award();		
-			that.gameDiv.appendChild(award.awardDiv);
+			gameDiv.appendChild(award.awardDiv);
 			notallowedtoMove.push(award);
 
 			function renderaward(){
@@ -1089,10 +1109,10 @@
 
 		function gameSetup(){	
 			if(!fightmainvillainFlag){	
-				that.gameDiv.style.width=gameProps.width+'px';
-				that.gameDiv.style.height=gameProps.height+'px';
-				that.gameDiv.style.position='relative';
-				that.gameDiv.style.overflow='hidden';
+				gameDiv.style.width=gameProps.width+'px';
+				gameDiv.style.height=gameProps.height+'px';
+				gameDiv.style.position='relative';
+				gameDiv.style.overflow='hidden';
 			
 				hero.y = 480;
 				hero.x = 280;
@@ -1121,33 +1141,45 @@
 					}
 
 				}
-				that.gameDiv.appendChild(background.element);
-				that.gameDiv.appendChild(hero.heroDiv);
+				gameDiv.appendChild(background.element);
+				gameDiv.appendChild(hero.heroDiv);
 			}else{
-				that.gameDiv.style.width=gameProps.width+'px';
-				that.gameDiv.style.height=gameProps.height+'px';
-				that.gameDiv.style.position='relative';
-				that.gameDiv.style.overflow='hidden';
+				heroBullets=[];
+				villainBullets=[];
+				gameDiv.style.width=gameProps.width+'px';
+				gameDiv.style.height=gameProps.height+'px';
+				gameDiv.style.position='relative';
+				gameDiv.style.overflow='hidden';
 
 				hero.y = 560;
 				hero.x = 280;
-
+				for(var i=0;i<map.length;i++){
+					for(var j=0;j<map.length;j++){
+						map[j][i]=0;
+					}	
+				}	
 				var getX=(hero.x/40);
 				var getY=(hero.y/40);
 
 				map[getY][getX]=1;
 
-				that.gameDiv.appendChild(background.element);
-				that.gameDiv.appendChild(hero.heroDiv);
+				map[13][6]=5;
+				createSteel(6,12);
+				map[13][11]=5;
+				createSteel(11,12);
+
+				gameDiv.appendChild(background.element);
+				hero.heroDiv.style.background='url(../TankWars/images/tank-pointing-up.png) no-repeat';
+				gameDiv.appendChild(hero.heroDiv);
 			}	
 			
 		};
 
 		function createmainVillain(){
-			that.gameDiv.appendChild(mainvillain.mainVillainDiv);
+			gameDiv.appendChild(mainvillain.mainVillainDiv);
 			function rendermainVillain(){
 				mainvillain.y = 0;
-				mainvillain.x =gameProps.width-mainvillain.width;				
+				mainvillain.x =gameProps.width/2;//gameProps.width-mainvillain.width;				
 			};	
 			rendermainVillain();
 		};
@@ -1157,7 +1189,7 @@
 
 			villaincount++;	
 			
-			that.gameDiv.appendChild(villain.villainDiv);
+			gameDiv.appendChild(villain.villainDiv);
 
 			var renderVillain=function(){
 				var rand=Math.random()*5;
@@ -1166,15 +1198,13 @@
 						villain.x=0;
 						villain.y=0;
 						villain.villainDirection=3;	
-						villain.villainDiv.style.background='url(../TankWars/images/enemy-tank-pointing-down.png) no-repeat';			
-						console.log("1.1");
+						villain.villainDiv.style.background='url(../TankWars/images/enemy-tank-pointing-down.png) no-repeat';	
 						map[0][0]=2;
 					}else{
 						villain.x=0;
 						villain.y=320;
 						villain.villainDirection=2;	
-						villain.villainDiv.style.background='url(../TankWars/images/enemy-tank-pointing-right.png) no-repeat';			
-						console.log("1.1");
+						villain.villainDiv.style.background='url(../TankWars/images/enemy-tank-pointing-right.png) no-repeat';	
 						map[8][0]=2;
 					}
 				}else if(rand>=1 && rand<2){
@@ -1182,15 +1212,13 @@
 						villain.x=0;
 						villain.y=240;
 						villain.villainDirection=2;	
-						villain.villainDiv.style.background='url(../TankWars/images/enemy-tank-pointing-right.png) no-repeat';			
-						console.log("1.1");
+						villain.villainDiv.style.background='url(../TankWars/images/enemy-tank-pointing-right.png) no-repeat';
 						map[6][0]=2;
 					}else{
 						villain.x=0;
 						villain.y=320;
 						villain.villainDirection=2;	
-						villain.villainDiv.style.background='url(../TankWars/images/enemy-tank-pointing-right.png) no-repeat';			
-						console.log("1.1");
+						villain.villainDiv.style.background='url(../TankWars/images/enemy-tank-pointing-right.png) no-repeat';	
 						map[8][0]=2;
 					}
 
@@ -1199,15 +1227,13 @@
 						villain.x=0;
 						villain.y=240;
 						villain.villainDirection=2;	
-						villain.villainDiv.style.background='url(../TankWars/images/enemy-tank-pointing-right.png) no-repeat';			
-						console.log("1.1");
+						villain.villainDiv.style.background='url(../TankWars/images/enemy-tank-pointing-right.png) no-repeat';	
 						map[6][0]=2;
 					}else{
 						villain.x=0;
 						villain.y=320;
 						villain.villainDirection=2;	
-						villain.villainDiv.style.background='url(../TankWars/images/enemy-tank-pointing-right.png) no-repeat';			
-						console.log("1.1");
+						villain.villainDiv.style.background='url(../TankWars/images/enemy-tank-pointing-right.png) no-repeat';
 						map[8][0]=2;
 					}
 
@@ -1216,22 +1242,19 @@
 						villain.x=280;
 						villain.y=0;
 						villain.villainDirection=3;	
-						villain.villainDiv.style.background='url(../TankWars/images/enemy-tank-pointing-down.png) no-repeat';			
-						console.log("1.1");
+						villain.villainDiv.style.background='url(../TankWars/images/enemy-tank-pointing-down.png) no-repeat';	
 						map[0][7]=2;
 					}else  if(map[0][8]==0){
 						villain.x=320;
 						villain.y=0;
 						villain.villainDirection=4;	
-						villain.villainDiv.style.background='url(../TankWars/images/enemy-tank-pointing-left.png) no-repeat';			
-						console.log("1.1");
+						villain.villainDiv.style.background='url(../TankWars/images/enemy-tank-pointing-left.png) no-repeat';
 						map[0][8]=2;
 					}else{
 						villain.x=240;
 						villain.y=0;
 						villain.villainDirection=4;	
-						villain.villainDiv.style.background='url(../TankWars/images/enemy-tank-pointing-left.png) no-repeat';			
-						console.log("1.1");
+						villain.villainDiv.style.background='url(../TankWars/images/enemy-tank-pointing-left.png) no-repeat';	
 						map[0][6]=2;
 					}
 
@@ -1240,175 +1263,22 @@
 						villain.x=560;
 						villain.y=240;
 						villain.villainDirection=4;	
-						villain.villainDiv.style.background='url(../TankWars/images/enemy-tank-pointing-left.png) no-repeat';			
-						console.log("1.1");
+						villain.villainDiv.style.background='url(../TankWars/images/enemy-tank-pointing-left.png) no-repeat';	
 						map[6][14]=2;
 					}else{
 						villain.x=560;
 						villain.y=320;
 						villain.villainDirection=4;	
-						villain.villainDiv.style.background='url(../TankWars/images/enemy-tank-pointing-left.png) no-repeat';			
-						console.log("1.1");
+						villain.villainDiv.style.background='url(../TankWars/images/enemy-tank-pointing-left.png) no-repeat';	
 						map[8][14]=2;
 					}
 
 				}
-
-
-
-				// if(hero.x>0 && !(hero.x==gameProps.width-hero.width)){
-				// 	if(map[0][7]==0){
-				// 		villain.x=280;
-				// 		// villain.y=-40;
-				// 		villain.y=0;
-				// 		villain.villainDirection=3;	
-				// 		villain.villainDiv.style.background='url(..//TankWars/images/enemy-tank-pointing-down.png) no-repeat';			
-				// 		console.log("1.1");
-				// 		map[0][7]=2;
-				// 	}
-				// 	else if(map[0][8]==0){
-				// 		villain.x=320;
-				// 		// villain.y=-40;
-				// 		villain.y=0;
-				// 		villain.villainDirection=3;	
-				// 		villain.villainDiv.style.background='url(..//TankWars/images/enemy-tank-pointing-down.png) no-repeat';			
-				// 		console.log("1.2");
-				// 		map[0][8]=2;
-				// 	}else if(map[0][6]==0){
-				// 		villain.x=240;
-				// 		//villain.y=-40;
-				// 		villain.y=0;
-				// 		villain.villainDirection=3;	
-				// 		villain.villainDiv.style.background='url(..//TankWars/images/enemy-tank-pointing-down.png) no-repeat';			
-				// 		console.log("1.3");
-				// 		map[0][6]=2;
-				// 	}else{
-				// 		//villain.x=-40;
-				// 		villain.x=0;
-				// 		villain.y=240;
-				// 		villain.villainDirection=2;	
-				// 		villain.villainDiv.style.background='url(..//TankWars/images/enemy-tank-pointing-right.png) no-repeat';			
-				// 		console.log("1.4");
-				// 		map[6][0]=2;
-				// 	}
-
-				// }else if(hero.x==0){
-				// 	var rand=Math.floor(Math.random()*2+1);
-				// 	if(rand==1){
-				// 		if(map[0][14]==0){
-				// 			//villain.x=gameProps.width;
-				// 			villain.x=gameProps.width-villain.width;
-				// 			villain.y=0;
-				// 			villain.villainDirection=4;	
-				// 			villain.villainDiv.style.background='url(..//TankWars/images/enemy-tank-pointing-left.png) no-repeat';			
-				// 			console.log("2.1");
-				// 			map[0][14]=2;
-				// 		}else if(map[8][14]==0){
-				// 			// villain.x=gameProps.width;
-				// 			villain.x=gameProps.width-villain.width;
-				// 			villain.y=320;
-				// 			villain.villainDirection=4;	
-				// 			villain.villainDiv.style.background='url(..//TankWars/images/enemy-tank-pointing-left.png) no-repeat';			
-				// 			console.log("2.2");
-				// 			map[8][14]=2;
-				// 		}else{
-				// 			// villain.x=-40;
-				// 			villain.x=0;
-				// 			villain.y=240;
-				// 			villain.villainDirection=2;	
-				// 			villain.villainDiv.style.background='url(..//TankWars/images/enemy-tank-pointing-right.png) no-repeat';			
-				// 			console.log("2.3");
-				// 			map[6][0]=2;
-				// 		}
-				// 	}else{
-				// 		if(map[8][14]==0){
-				// 			// villain.x=gameProps.width;
-				// 			villain.x=gameProps.width-villain.width;
-				// 			villain.y=320;
-				// 			villain.villainDirection=4;	
-				// 			villain.villainDiv.style.background='url(..//TankWars/images/enemy-tank-pointing-left.png) no-repeat';			
-				// 			console.log("2.2");
-				// 			map[8][14]=2;
-				// 		}else if(map[0][14]==0){
-				// 			//villain.x=gameProps.width;
-				// 			villain.x=gameProps.width-villain.width;
-				// 			villain.y=0;
-				// 			villain.villainDirection=4;	
-				// 			villain.villainDiv.style.background='url(..//TankWars/images/enemy-tank-pointing-left.png) no-repeat';			
-				// 			console.log("2.1");
-				// 			map[0][14]=2;
-				// 		}else{
-				// 			//villain.x=-40;
-				// 			villain.x=0;
-				// 			villain.y=240;
-				// 			villain.villainDirection=2;	
-				// 			villain.villainDiv.style.background='url(..//TankWars/images/enemy-tank-pointing-right.png) no-repeat';			
-				// 			console.log("2.3");
-				// 			map[6][0]=2;
-				// 		}
-				// 	}				
-				// }else if(hero.x==gameProps.width-hero.width){
-				// 	var rand=Math.floor(Math.random()*2+1);
-				// 	if(rand==1){
-				// 		if(map[0][0]==0){
-				// 			//villain.x=-40;
-				// 			villain.x=0;
-				// 			villain.y=0;
-				// 			villain.villainDirection=2;	
-				// 			villain.villainDiv.style.background='url(..//TankWars/images/enemy-tank-pointing-right.png) no-repeat';			
-				// 			console.log("3.1");
-				// 			map[0][0]=2;
-				// 		}else if(map[8][0]==0){
-				// 			//villain.x=-40;
-				// 			villain.x=0;
-				// 			villain.y=320;
-				// 			villain.villainDirection=2;	
-				// 			villain.villainDiv.style.background='url(..//TankWars/images/enemy-tank-pointing-right.png) no-repeat';			
-				// 			console.log("3.2");
-				// 			map[0][8]=2;
-				// 		}else{
-				// 			//villain.x=-40;
-				// 			villain.x=0;
-				// 			villain.y=240;
-				// 			villain.villainDirection=2;	
-				// 			villain.villainDiv.style.background='url(..//TankWars/images/enemy-tank-pointing-right.png) no-repeat';			
-				// 			console.log("3.3");
-				// 			map[6][0]=2;
-				// 		}
-				// 	}else{
-				// 		if(map[0][8]==0){
-				// 			//villain.x=-40;
-				// 			villain.x=0;
-				// 			villain.y=320;
-				// 			villain.villainDirection=4;	
-				// 			villain.villainDiv.style.background='url(..//TankWars/images/enemy-tank-pointing-left.png) no-repeat';			
-				// 			console.log("2.2");
-				// 			map[0][8]=2;
-				// 		}else if(map[0][0]==0){
-				// 			// villain.x=-40;
-				// 			villain.x=0;
-				// 			villain.y=0;
-				// 			villain.villainDirection=4;	
-				// 			villain.villainDiv.style.background='url(..//TankWars/images/enemy-tank-pointing-left.png) no-repeat';			
-				// 			console.log("2.1");
-				// 			map[0][0]=2;
-				// 		}else{
-				// 			// villain.x=-40;
-				// 			villain.x=0;
-				// 			villain.y=240;
-				// 			villain.villainDirection=2;	
-				// 			villain.villainDiv.style.background='url(..//TankWars/images/enemy-tank-pointing-right.png) no-repeat';			
-				// 			console.log("2.3");
-				// 			map[6][0]=2;
-				// 		}
-				// 	}
-				// }
 				
 			};				
 			var moveInit=function(){
 				//Statements to move the villain inside the gameProps				
 				if((villain.x==0&&villain.y>=0)||(villain.x==(gameProps.width-villain.width)&&(villain.y>=0))||(villain.y==0&&villain.x>0&&villain.x<(gameProps.width-villain.height))){
-					console.log(map);
 					clearInterval(intervaltoInit);
 				}else{
 
@@ -1420,31 +1290,13 @@
 					}
 					else if(villain.x>0&&villain.x<(gameProps.width-villain.width)&&villain.y<0){
 						villain.y+=10;
-						console.log(villain.y);
 					}	
 				}	
 
 				villain.villainSetup();			
 							
 							
-			};	
-
-			// var dir_decider=Math.floor(Math.random()*4)+1;
-			// 	switch(dir_decider){
-			// 		case 1:turnUp(1);
-			// 				break;
-			// 		case 2:turnRight(1);
-			// 				break;
-			// 		case 3:turnDown(1);
-			// 				break;
-			// 		case 4:turnLeft(1);
-			// 				break;
-
-			// 	}
-			// 	villain.villainDirection=1;	
-
-			
-
+			};
 			renderVillain();
 
 			var intervaltoInit=setInterval(moveInit,100);	
@@ -1457,7 +1309,7 @@
 		function createSuicide(position){
 			var suicide=new suicidialTanks();
 
-			that.gameDiv.appendChild(suicide.suicideDiv);						
+			gameDiv.appendChild(suicide.suicideDiv);						
 
 			function renderSuicide(){
 				if(position==1){
@@ -1582,7 +1434,7 @@
 
 		var RandomMovement = function(obj) {
 			var villain=obj;
-			var random = Math.random() * 4;
+			var random = Math.random() * 5;
 			if ((random >= 0) && random < 1) {
 				turnRight(11,villain);
 				if(obj.x<gameProps.width-obj.width){
@@ -1668,17 +1520,29 @@
 				//background.updateFrame();
 				hero.heroSetup();
 
-				if(gameLoopCount % 100==0&&villaincount<=4){			
+				if(gameLoopCount % 80==0&&villaincount<=5){			
 					if(villainkills%5==0){
 						suicidetankFlag=true;								
 					}		
-
-					createVillain();
+					if(!(villainkills>=12)){
+						createVillain();					
+						
+						
+					}
+					for (var i=0; i<villains.length; i++){
+						var villain = villains[i];
+						villain.villainSetup();					
+					}
 					moveVillains();
-					
 
-
-
+					if(villainkills>0&&villains.length==0){
+						alert("main villain on his way to kill you");
+						reachLevel2=2;
+						fightmainvillainFlag=true;
+						GameStarter();
+						
+						
+					}
 													
 					// if(suicidetankFlag){
 					// 	createSuicide(1);
@@ -1701,17 +1565,10 @@
 
 					// 	var attacktiming=setInterval(suicideAttack,50);	
 
-					//  }
-
-
-					for (var i=0; i<villains.length; i++){
-						var villain = villains[i];
-						villain.villainSetup();					
-					}
-					
-					
+					//  }								
 				}
 			}else{
+				clearDiv(gameDiv);
 				gameSetup();
 				hero.heroSetup();
 				createmainVillain();
@@ -1721,7 +1578,7 @@
 				level2();				
 
 			}
-			//detectBombBlasts();
+			
 		};
 
 			
@@ -1733,7 +1590,6 @@
 					heroDirection=1;
 					hero.height=40;
 					hero.width=40;
-					console.log(hero.x+'    '+hero.y);
 					hero.heroDiv.style.background='url(../TankWars/images/tank-pointing-up.png) no-repeat';
 				}
 				hero.heroSetup();
@@ -1776,9 +1632,6 @@
 					}else if(map[Math.floor((hero.y-40)/40)][Math.floor((hero.x)/40)]==7){
 						var getX=Math.floor((hero.x/40));
 						var getY=Math.floor((hero.y/40));
-
-						console.log(getX,"  ",getY);
-
 						if(getX==9){
 							map[getY][getX]=0;
 
@@ -1805,7 +1658,7 @@
 						
 						hero.heroSetup();
 					}else if(map[Math.floor((hero.y-40)/40)][Math.floor((hero.x)/40)]==2){
-						alert("Tank-Tank collision");
+						alert("Tank-Tank collision. Game Over!!");
 						window.location.reload();
 					}
 				}	
@@ -1816,7 +1669,6 @@
 				if(villain.villainDirection==1){
 					if(villain.x>0){
 						if((map[Math.floor((villain.y-40)/40)][Math.floor((villain.x)/40)]==0)&&(!map[Math.floor((villain.y)/40)][Math.floor((villain.x)/40)])){
-						console.log("moved up");
 						var getX=(villain.x/40);
 						var getY=(villain.y/40);
 
@@ -1831,126 +1683,73 @@
 						villain.villainSetup();
 										
 						}else if(map[Math.floor((villain.y-40)/40)][Math.floor((villain.x)/40)]==1){
-								alert("tank-tank collision");
+								alert("tank-tank collision. Game Over!!");
 								window.location.reload();
 						}	
 					}	
 				}
 			}else if(numchk==5){
 				var bullet=obj;
-
-					if(map[Math.floor((bullet.bulletY-40)/40)][Math.floor((bullet.bulletX)/40)]==0){
+					if(map[Math.floor((bullet.bulletY-40)/40)][Math.floor((bullet.bulletX)/40)]==0 ){
 						if(bullet.bulletDirection==1){
-							bullet.bulletY-=40;
+						 		bullet.bulletY-=40;
 						}
-					}else if(map[Math.floor((bullet.bulletY-40)/40)][Math.floor((bullet.bulletX)/40)]==6){					
-						//deleteElement(that.gameDiv,bullet.bulletDiv);
-
-						for(var i=0;i<walls.length;i++){	
-
+					}else if(map[Math.floor((bullet.bulletY-40)/40)][Math.floor((bullet.bulletX)/40)]==6){	
+					 	for(var i=0;i<walls.length;i++){
 							if(((walls[i].x+walls[i].width)>=(bullet.bulletX+bullet.width))&&(bullet.bulletX>=walls[i].x)){
-								if(((bullet.bulletY+bullet.height)<=walls[i].y)||((walls[i].y+walls[i].height)>=bullet.bulletY)){
-									
-									//deleteElement(that.gameDiv,walls[i].wallDiv);
-									that.gameDiv.removeChild(walls[i].wallDiv);
-
+								if(((bullet.bulletY+bullet.height)<=walls[i].y)||((walls[i].y+walls[i].height)>=bullet.bulletY)){																		
+									gameDiv.removeChild(walls[i].wallDiv);
 									map[Math.floor((bullet.bulletY-40)/40)][Math.floor((bullet.bulletX)/40)]=0;
-
 									walls.splice(i,1);
-
-									that.gameDiv.removeChild(bullet.bulletDiv);
-									 // delete bullet.height;
-									 // delete bullet.width;
-
-									// bullet.height=null;
-									// bullet.width=null;
-
-									if(bullet.whoseBullet==1){
-										var j=findBulletById(heroBullets,bullet.id);									
-										heroBullets.splice(j,1);
-										delete bullet.height;
-									 	delete bullet.width;
-									}else if(bullet.whoseBullet==2){
-										var j=findBulletById(villainBullets,bullet.id);									
-										villainBullets.splice(j,1);
-										delete bullet.height;
-									 	delete bullet.width;
-									}
+									bullet.bulletDelete=true;
 									break;
-									
-									
 								}
 							}		
 						}
-						
-
-					}else if(((map[Math.floor((bullet.bulletY-40)/40)][Math.floor((bullet.bulletX)/40)])==2)&&(bullet.whoseBullet==1)){
-						//deleteElement(that.gameDiv,bullet.bulletDiv);	
+				 	}
+					else if(((map[Math.floor((bullet.bulletY-40)/40)][Math.floor((bullet.bulletX)/40)])==2)&&(bullet.whoseBullet==1)){
+					
 						for(var i=0;i<villains.length;i++){	
+							if(((villains[i].x+villains[i].width)>=(bullet.bulletX+bullet.width))&&(bullet.bulletX>=villains[i].x)){
+								if(((bullet.bulletY)>=villains[i].y)&&((villains[i].y+villains[i].height)>=bullet.bulletY)){																		
+																										
+									gameDiv.removeChild(villains[i].villainDiv);
 
-								if(((villains[i].x+villains[i].width)>=(bullet.bulletX+bullet.width))&&(bullet.bulletX>=villains[i].x)){
-									if(((bullet.bulletY+bullet.height)<=villains[i].y)||((villains[i].y+villains[i].height)>=bullet.bulletY)){
-										
-										that.gameDiv.removeChild(villains[i].villainDiv);
-										
-										//delete villains[i].height;
-										
-										map[Math.floor((bullet.bulletY-40)/40)][Math.floor((bullet.bulletX)/40)]=0;
-										villains.splice(i,1);
+									map[Math.floor((bullet.bulletY-40)/40)][Math.floor((bullet.bulletX)/40)]=0;
 
-										villaincount--;
-
-										villainkills++;
-
-										that.gameDiv.removeChild(bullet.bulletDiv);
-										//deleteElement(that.gameDiv,bullet.bulletDiv);
-										// delete bullet.height;
-										// delete bullet.width;
-										if(bullet.whoseBullet==1){
-											var j=findBulletById(heroBullets,bullet.id);									
-											heroBullets.splice(j,1);
-											delete bullet.height;
-										 	delete bullet.width;
-										}else if(bullet.whoseBullet==2){
-											var j=findBulletById(villainBullets,bullet.id);									
-											villainBullets.splice(j,1);
-											delete bullet.height;
-										 	delete bullet.width;
-										}
-										break;
-										
-										
-									}
-							}	
+									villains.splice(i,1);
+									bullet.bulletDelete=true;
+									break;	
+								}	
+							}
+							
 						}	
-						bullet.bulletDelete=true;			
-						//deletevillain
-					}else if(map[Math.floor((bullet.bulletY-40)/40)][Math.floor((bullet.bulletX)/40)]==5){					
-						//deleteElement(that.gameDiv,bullet.bulletDiv);
+						return;	
+					}else if(map[Math.floor((bullet.bulletY-40)/40)][Math.floor((bullet.bulletX)/40)]==5){
 						bullet.bulletDelete=true;
+						return;
 					}else if(((map[Math.floor((bullet.bulletY-40)/40)][Math.floor((bullet.bulletX)/40)])==2)&&(bullet.whoseBullet==2)){
-						//deleteElement(that.gameDiv,bullet.bulletDiv);	
-						bullet.bulletDelete=true;				
-						//do nothing villain shooting villain
+						bullet.bulletDelete=true;
+						return;	
 					}else if(((map[Math.floor((bullet.bulletY-40)/40)][Math.floor((bullet.bulletX)/40)])==1)&&(bullet.whoseBullet==1)){
 						bullet.bulletDelete=true;
+						return;
 					}else if(((map[Math.floor((bullet.bulletY-40)/40)][Math.floor((bullet.bulletX)/40)])==1)&&(bullet.whoseBullet==2)){
-						that.gameDiv.removeChild(hero.heroDiv);	
+						gameDiv.removeChild(hero.heroDiv);	
 							bullet.bulletDelete=true;	
 							alert("Game Over!!Press Ok to play again");
 							window.location.reload();				
 						//do nothing villain shooting villain
 					}else if(((map[Math.floor((bullet.bulletY-40)/40)][Math.floor((bullet.bulletX)/40)])==8)){
-						//deleteElement(that.gameDiv,bullet.bulletDiv);					
-						//do nothing villain shooting villain
+						
 						alert("Game Over!!Press Ok to play again");
 						window.location.reload();
 
 					}else if((map[Math.floor((bullet.bulletY-40)/40)][Math.floor((bullet.bulletX)/40)])==7){
 						bullet.bulletDelete=true;
-					}
-
-			}	
+						return;
+					}				
+				}	
 		};
 		
 		var  turnDown=function(villainFlag,obj){
@@ -1961,7 +1760,6 @@
 						heroDirection=3;
 						hero.height=40;
 						hero.width=40;
-						console.log(hero.x+'    '+hero.y);
 						hero.heroDiv.style.background='url(../TankWars/images/tank-pointing-down.png) no-repeat';
 					}
 					hero.heroSetup();
@@ -1969,7 +1767,6 @@
 				else{
 					var villain=obj;
 					if(!(villain.villainDirection==3)){
-							console.log("hello");
 							villain.villainDirection=3;
 							villain.height=40;
 							villain.width=40;
@@ -2029,7 +1826,7 @@
 						}
 						hero.heroSetup();
 					}else if(map[Math.floor((hero.y+40)/40)][Math.floor((hero.x)/40)]==2){
-						alert("Tank-Tank collision");
+						alert("Tank-Tank collision. Game Over!!");
 						window.location.reload();
 					}
 				}
@@ -2053,11 +1850,8 @@
 								map[getY][getX]=2;
 
 								villain.villainSetup();
-
-								console.log("moved down");
-											
 								}else if(map[Math.floor((villain.y+40)/40)][Math.floor((villain.x)/40)]==1){
-									alert("tank-tank collision");
+									alert("tank-tank collision.. Game Over!!");
 									window.location.reload();
 								}
 							}		
@@ -2069,125 +1863,71 @@
 						if(bullet.bulletDirection==3){
 							bullet.bulletY+=40;
 						}
-					}else if(map[Math.floor((bullet.bulletY)/40)][Math.floor((bullet.bulletX)/40)]==6){					
-						//	deleteElement(that.gameDiv,bullet.bulletDiv);
+					}else if(map[Math.floor((bullet.bulletY)/40)][Math.floor((bullet.bulletX)/40)]==6){	
 						for(var i=0;i<walls.length;i++){	
 
 							if(((walls[i].x+walls[i].width)>=(bullet.bulletX+bullet.width))&&(bullet.bulletX>=walls[i].x)){								
 								if(((bullet.bulletY+bullet.height)<=walls[i].y)||((walls[i].y+walls[i].height)>=bullet.bulletY)){
-									that.gameDiv.removeChild(walls[i].wallDiv);
+									gameDiv.removeChild(walls[i].wallDiv);
 									map[Math.floor((bullet.bulletY)/40)][Math.floor((bullet.bulletX)/40)]=0;
 									walls.splice(i,1);
-									that.gameDiv.removeChild(bullet.bulletDiv);
-									// delete bullet.height;
-									// delete bullet.width;
-									if(bullet.whoseBullet==1){
 
-										var j=findBulletById(heroBullets,bullet.id);
-										heroBullets.splice(j,1);
-										delete bullet.height;
-										delete bullet.width;
-										// delete bullet.bulletY;
-										// delete bullet.bulletX;
-										
-									}else if(bullet.whoseBullet==2){
-										var j=findBulletById(villainBullets,bullet.id);									
-										villainBullets.splice(j,1);
-										delete bullet.height;
-										delete bullet.width;
-										// delete bullet.bulletY;
-										// delete bullet.bulletX;	
-																	
-									}
+									bullet.bulletDelete=true;
 									break;								
 								}
 							}
 
 						}
-						//bullet.bulletDelete=true;
-
+						
 					}else if(((map[Math.floor((bullet.bulletY)/40)][Math.floor((bullet.bulletX)/40)])==2)&&(bullet.whoseBullet==1)){
-						//deleteElement(that.gameDiv,bullet.bulletDiv);					
-						//deletevillain
+						
 						for(var i=0;i<villains.length;i++){	
 
-							if(((villains[i].x+villains[i].width)>=(bullet.bulletX+bullet.width))&&(bullet.bulletX>=villains[i].x)){								
-								if(((bullet.bulletY+bullet.height)>=(villains[i].y))&&(villains[i].y>bullet.bulletY)){
-									//deleteElement(that.gameDiv,villains[i].wallDiv);
-									alert("enemy tank hit");
-									that.gameDiv.removeChild(villains[i].villainDiv);
-									//villains[i].wallDiv.parentNode.removeChild(villains[i].wallDiv);
-									//alert("villain collision");
-									//delete villains[i].height;
+							if(((villains[i].x+villains[i].width)>=(bullet.bulletX+bullet.width))&&(bullet.bulletX>=villains[i].x)){	
+
+								if(((bullet.bulletY+bullet.height)<=villains[i].y)||((villains[i].y+villains[i].height)>=bullet.bulletY)){
+
+									gameDiv.removeChild(villains[i].villainDiv);
 									map[Math.floor((bullet.bulletY)/40)][Math.floor((bullet.bulletX)/40)]=0;
 									villains.splice(i,1);
 									villaincount--;
 
 									villainkills++;
 
-									that.gameDiv.removeChild(bullet.bulletDiv);
-									//deleteElement(that.gameDiv,bullet.bulletDiv);
-									// delete bullet.height;
-									// delete bullet.width;
-									if(bullet.whoseBullet==1){
-										var j=findBulletById(heroBullets,bullet.id);									
-										heroBullets.splice(j,1);
-										delete bullet.height;
-										delete bullet.width;
-									}else if(bullet.whoseBullet==2){
-										var j=findBulletById(villainBullets,bullet.id);									
-										villainBullets.splice(j,1);
-										delete bullet.height;
-										delete bullet.width;		
-									}
+									bullet.bulletDelete=true;
 									break;
 																	
 								}
 							}	
 						}
 						bullet.bulletDelete=true;
-					}else if(map[Math.floor((bullet.bulletY)/40)][Math.floor((bullet.bulletX)/40)]==5){					
-						//deleteElement(that.gameDiv,bullet.bulletDiv);
-						bullet.bulletDelete=true;
-
+					}else if(map[Math.floor((bullet.bulletY)/40)][Math.floor((bullet.bulletX)/40)]==5){	
+						bullet.bulletDelete=true;			
+						
+						return;
 					}else if(((map[Math.floor((bullet.bulletY)/40)][Math.floor((bullet.bulletX)/40)])==2)&&(bullet.whoseBullet==2)){
-						//deleteElement(that.gameDiv,bullet.bulletDiv);					
+										
 						bullet.bulletDelete=true;
-						//do nothing villain shooting villain
+						return;
 					}else if(((map[Math.floor((bullet.bulletY)/40)][Math.floor((bullet.bulletX)/40)])==1)&&(bullet.whoseBullet==1)){					
 						bullet.bulletDelete=true;
+						return;
 					}else if(((map[Math.floor((bullet.bulletY)/40)][Math.floor((bullet.bulletX)/40)])==1)&&(bullet.whoseBullet==2)){
-						that.gameDiv.removeChild(hero.heroDiv);	
+						gameDiv.removeChild(hero.heroDiv);	
 							bullet.bulletDelete=true;		
 							alert("Game Over!!Press Ok to play again");
 							window.location.reload();			
-						//do nothing villain shooting villain
+							
 					}else if(((map[Math.floor((bullet.bulletY)/40)][Math.floor((bullet.bulletX)/40)])==8)){
-						//deleteElement(that.gameDiv,bullet.bulletDiv);					
-						//do nothing villain shooting villain
+						
 						alert("Game Over!!Press Ok to play again");
 						window.location.reload();
 
 					}else if((map[Math.floor((bullet.bulletY)/40)][Math.floor((bullet.bulletX)/40)])==7){
 						bullet.bulletDelete=true;	
-
+						return;
 					}
-				}else{
-					
-					that.gameDiv.removeChild(bullet.bulletDiv);
-					
-					if(bullet.whoseBullet==1){
-						var j=findBulletById(heroBullets,bullet.id);									
-						heroBullets.splice(j,1);
-						delete bullet.height;
-						delete bullet.width;
-					}else if(bullet.whoseBullet==2){
-						var j=findBulletById(villainBullets,bullet.id);									
-						villainBullets.splice(j,1);
-						delete bullet.height;
-						delete bullet.width;		
-					}
-				}	
+				}
 			}	
 
 		};
@@ -2198,8 +1938,7 @@
 						heroDirection=4;					
 						hero.height=40;
 						hero.width=40;
-						//hero.y=hero.y+13;		//After rotation to fix the hero.y
-						console.log(hero.x+'    '+hero.y);
+						
 						hero.heroDiv.style.background='url(../TankWars/images/tank-pointing-left.png) no-repeat';
 					}
 					hero.heroSetup();
@@ -2222,7 +1961,6 @@
 				if(hero.x>0){
 
 					  if(map[Math.floor(hero.y/40)][Math.floor((hero.x-40)/40)]==0){
-						console.log("moved left");
 						var getX=(hero.x/40);
 						var getY=(hero.y/40);
 
@@ -2267,7 +2005,7 @@
 						}
 						hero.heroSetup();
 					}else if(map[Math.floor(hero.y/40)][Math.floor((hero.x-40)/40)]==0){
-						alert("tank-tank collision");
+						alert("Tank-tank collision. Game Over!!");
 						window.location.reload();
 					}
 				}					
@@ -2276,17 +2014,15 @@
 				if(fightmainvillainFlag){	
 					if(mainvillain.x>0){
 						mainvillain.x-=40;
-						mainvillain.mainVillainSetup();
-						
-						console.log("move -left")	;
-					}
+
+					}	
+					mainvillain.mainVillainSetup();	
 				}
 				else{
 					var villain=obj;
 					if(villain.villainDirection==4){
 							if(villain.x>0){
 								 if(map[Math.floor(villain.y/40)][Math.floor((villain.x-40)/40)]==0){
-									console.log("moved left");
 									var getX=(villain.x/40);
 									var getY=(villain.y/40);
 
@@ -2301,7 +2037,7 @@
 									villain.villainSetup();
 												
 									}else if(map[Math.floor(villain.y/40)][Math.floor((villain.x-40)/40)]==1){
-										alert("tank-tank collision");
+										alert("tank-tank collision. Game Over!!");
 										window.location.reload();
 									}	
 							}		
@@ -2310,15 +2046,6 @@
 				}
 			}else if(numchk==5){
 				var bullet=obj;
-				// if((bullet.bulletX+bullet.width)==(bullet.width)||bullet.bulletX==(gameProps.width-bullet.width)){
-				// 			deleteElement(that.gameDiv,bullet.bulletDiv);
-				// 			delete bullet.height;
-				// 			delete bullet.width;
-				// 			delete bullet.bulletY;
-				// 			delete bullet.bulletX;
-				// 			//window.cancelAnimationFrame(myReq);
-							
-				// }
 					if(map[Math.floor((bullet.bulletY)/40)][Math.floor((bullet.bulletX-40)/40)]==0){	
 						if(bullet.bulletDirection==4){
 							bullet.bulletX-=40;
@@ -2329,25 +2056,13 @@
 							if((walls[i].y <= bullet.bulletY) && ((walls[i].y+walls[i].height) > bullet.bulletY)){
 								if((bullet.bulletX <= (walls[i].x+walls[i].width))){
 
-									that.gameDiv.removeChild(walls[i].wallDiv);
+									gameDiv.removeChild(walls[i].wallDiv);
 									
 									map[Math.floor((bullet.bulletY)/40)][Math.floor((bullet.bulletX-40)/40)]=0;
 
 									walls.splice(i,1);
 
-									that.gameDiv.removeChild(bullet.bulletDiv);
-									
-									if(bullet.whoseBullet==1){
-										var j=findBulletById(heroBullets,bullet.id);									
-										heroBullets.splice(j,1);
-										delete bullet.height;
-										delete bullet.width;
-									}else if(bullet.whoseBullet==2){
-										var j=findBulletById(villainBullets,bullet.id);									
-										villainBullets.splice(j,1);
-										delete bullet.height;
-										delete bullet.width;
-									}
+									bullet.bulletDelete=true;	
 										break;		
 														
 
@@ -2356,66 +2071,46 @@
 							}			
 						}	
 
-						//bullet.bulletDelete=true;
 					}else if(((map[Math.floor((bullet.bulletY)/40)][Math.floor((bullet.bulletX-40)/40)])==2)&&(bullet.whoseBullet==1)){
-						//deleteElement(that.gameDiv,bullet.bulletDiv);					
-						//deletevillain
+						
 						for(var i=0;i<villains.length;i++){	
 							if((villains[i].y <= bullet.bulletY) && ((villains[i].y+villains[i].height) > bullet.bulletY)){									
 								if((bullet.bulletX == (villains[i].x+villains[i].width))&&(bullet.bulletX>villains[i].x)){
-									//deleteElement(that.gameDiv,villains[i].wallDiv);
-									that.gameDiv.removeChild(villains[i].villainDiv);
-									//villains[i].wallDiv.parentNode.removeChild(villains[i].wallDiv);
-									//alert("villain collision");
-									// delete villains[i].height;
+									
+									gameDiv.removeChild(villains[i].villainDiv);
 									map[Math.floor((bullet.bulletY)/40)][Math.floor((bullet.bulletX-40)/40)]=0;
 									villains.splice(i,1);
 									villaincount--;
 
 									villainkills++;
 
-									that.gameDiv.removeChild(bullet.bulletDiv);
-									//deleteElement(that.gameDiv,bullet.bulletDiv);
-									// delete bullet.height;
-									// delete bullet.width;
-									if(bullet.whoseBullet==1){
-										var j=findBulletById(heroBullets,bullet.id);									
-										heroBullets.splice(j,1);
-										delete bullet.height;
-										delete bullet.width;
-									}else if(bullet.whoseBullet==2){
-										var j=findBulletById(villainBullets,bullet.id);									
-										villainBullets.splice(j,1);
-										delete bullet.height;
-										delete bullet.width;
-									}
+									bullet.bulletDelete=true;	
 									break;
 								}
 							}	
 						}
-					}else if(map[Math.floor((bullet.bulletY)/40)][Math.floor((bullet.bulletX-40)/40)]==5){					
-						//deleteElement(that.gameDiv,bullet.bulletDiv);
+					}else if(map[Math.floor((bullet.bulletY)/40)][Math.floor((bullet.bulletX-40)/40)]==5){	
 						bullet.bulletDelete=true;
+						return;
 					}else if(((map[Math.floor((bullet.bulletY)/40)][Math.floor((bullet.bulletX-40)/40)])==2)&&(bullet.whoseBullet==2)){
-						//deleteElement(that.gameDiv,bullet.bulletDiv);					
-						//do nothing villain shooting villain
 						bullet.bulletDelete=true;
+						return;
 					}else if(((map[Math.floor((bullet.bulletY)/40)][Math.floor((bullet.bulletX-40)/40)])==1)&&(bullet.whoseBullet==1)){
-						
 						bullet.bulletDelete=true;
+						return;
 					}else if(((map[Math.floor((bullet.bulletY)/40)][Math.floor((bullet.bulletX-40)/40)])==1)&&(bullet.whoseBullet==2)){
-						that.gameDiv.removeChild(hero.heroDiv);	
+						gameDiv.removeChild(hero.heroDiv);	
 						bullet.bulletDelete=true;		
 						alert("Game Over!!Press Ok to play again");
 						window.location.reload();			
-					//do nothing villain shooting villain
+					
 					}else if((map[Math.floor((bullet.bulletY)/40)][Math.floor((bullet.bulletX-40)/40)])==7){						
-						bullet.bulletDelete=true;			
-						//bullets can't penetrate tunnel
+						bullet.bulletDelete=true;	
+						return;		
+						
 					}
 					else if(((map[Math.floor((bullet.bulletY)/40)][Math.floor((bullet.bulletX-40)/40)])==8)){
-					//deleteElement(that.gameDiv,bullet.bulletDiv);					
-					//do nothing villain shooting villain
+					
 					alert("Game Over!!Press Ok to play again");
 					window.location.reload();
 
@@ -2430,8 +2125,6 @@
 						heroDirection=2;
 						hero.height=40;
 						hero.width=40;
-						//hero.y=hero.y+13;	
-						console.log(hero.x+'    '+hero.y);
 						hero.heroDiv.style.background='url(../TankWars/images/tank-pointing-right.png) no-repeat';
 					}
 				hero.heroSetup();
@@ -2494,7 +2187,6 @@
 							map[getY][getX]=1;
 						}
 						hero.heroSetup();
-						console.log(map);
 					}else if(map[Math.floor(hero.y/40)][Math.floor((hero.x+40)/40)]==0){
 						alert("tank-tank collision");
 						window.location.reload();
@@ -2502,11 +2194,12 @@
 				}
 			}
 			else if(numchk==11){
-				if(fightmainvillainFlag){
+				if(fightmainvillainFlag){					
 					if(mainvillain.x<(gameProps.width-mainvillain.width)){
 							mainvillain.x+=40;
 							mainvillain.mainVillainSetup();							
-					}	
+						}	
+				
 				}else{
 					var villain=obj;
 					
@@ -2515,7 +2208,6 @@
 							if(villain.x>0){
 
 								if(map[Math.floor(villain.y/40)][Math.floor((villain.x+40)/40)]==0){
-								console.log("moved right");
 								var getX=(villain.x/40);
 								var getY=(villain.y/40);
 
@@ -2537,83 +2229,39 @@
 				}	
 			}else if(numchk==5){
 				var bullet=obj;
-				// if((bullet.bulletX+bullet.width)==(bullet.width)||bullet.bulletX==(gameProps.width-bullet.width)){
-				// 			deleteElement(that.gameDiv,bullet.bulletDiv);
-				// 			delete bullet.height;
-				// 			delete bullet.width;
-				// 			delete bullet.bulletY;
-				// 			delete bullet.bulletX;
-				// 			//window.cancelAnimationFrame(myReq);
-							
-				// }
-
+				
 				if(map[Math.floor((bullet.bulletY)/40)][Math.floor((bullet.bulletX)/40)]==0){	//No need to add 40 to bulletX as its added while fixing height and width during rotation
 					if(bullet.bulletDirection==2){
 						bullet.bulletX+=40;
 					}
 				}else if(map[Math.floor((bullet.bulletY)/40)][Math.floor((bullet.bulletX)/40)]==6){					
-					//deleteElement(that.gameDiv,bullet.bulletDiv);
+					
 					for(var i=0;i<walls.length;i++){	
 						if((walls[i].y <= bullet.bulletY) && ((walls[i].y+walls[i].height) > bullet.bulletY)){
 								if(((bullet.bulletX+bullet.width) >= (walls[i].x))&&(bullet.bulletX<=walls[i].x)){
 							
-									that.gameDiv.removeChild(walls[i].wallDiv);
+									gameDiv.removeChild(walls[i].wallDiv);
 									map[Math.floor((bullet.bulletY)/40)][Math.floor((bullet.bulletX)/40)]=0;
 									walls.splice(i,1);
 
-									that.gameDiv.removeChild(bullet.bulletDiv);
-									// delete bullet.height;
-									// delete bullet.width;
-									if(bullet.whoseBullet==1){
-										var j=findBulletById(heroBullets,bullet.id);									
-										heroBullets.splice(j,1);
-										console.log(j);
-										delete bullet.height;
-										delete bullet.width;
-									}else if(bullet.whoseBullet==2){
-										var j=findBulletById(villainBullets,bullet.id);									
-										villainBullets.splice(j,1);
-										console.log(j);
-										delete bullet.height;
-										delete bullet.width;
-									}
+									bullet.bulletDelete=true;
 										break;
 										
 								}
 						}	
 					}
-					//bullet.bulletDelete=true;
+					
 				}else if(((map[Math.floor((bullet.bulletY)/40)][Math.floor((bullet.bulletX)/40)])==2)&&(bullet.whoseBullet==1)){
-					//deleteElement(that.gameDiv,bullet.bulletDiv);
+					
 					for(var i=0;i<villains.length;i++){	
 						if(((villains[i].x+villains[i].width)>=(bullet.bulletX+bullet.width))&&(bullet.bulletX>=villains[i].x)){
-							if(((bullet.bulletY+bullet.height)<=villains[i].y)||((villains[i].y+villains[i].height)>=bullet.bulletY)){
-								//deleteElement(that.gameDiv,villains[i].wallDiv);
-								that.gameDiv.removeChild(villains[i].villainDiv);
-								//villains[i].wallDiv.parentNode.removeChild(villains[i].wallDiv);
-								//alert("villain collision");
-								// delete villains[i].height;
+							if(((bullet.bulletX+bullet.width) >= (villains[i].x))&&(bullet.bulletX<=villains[i].x)){
+								gameDiv.removeChild(villains[i].villainDiv);
 								map[Math.floor((bullet.bulletY-40)/40)][Math.floor((bullet.bulletX)/40)]=0;
 								villains.splice(i,1);
 								villaincount--;
-
 								villainkills++;
-
-								that.gameDiv.removeChild(bullet.bulletDiv);
-								//deleteElement(that.gameDiv,bullet.bulletDiv);
-								// delete bullet.height;
-								// delete bullet.width;
-								if(bullet.whoseBullet==1){
-									var j=findBulletById(heroBullets,bullet.id);									
-									heroBullets.splice(j,1);
-									delete bullet.height;
-									delete bullet.width;
-								}else if(bullet.whoseBullet==2){
-									var j=findBulletById(villainBullets,bullet.id);									
-									villainBullets.splice(j,1);
-									delete bullet.height;
-									delete bullet.width;
-								}
+								bullet.bulletDelete=true;	
 								break;
 									
 							}
@@ -2622,25 +2270,23 @@
 					
 					bullet.bulletDelete=true;
 				}else if(map[Math.floor((bullet.bulletY)/40)][Math.floor((bullet.bulletX)/40)]==5){					
-					//deleteElement(that.gameDiv,bullet.bulletDiv);
+					
 					bullet.bulletDelete=true;
 
 				}else if(((map[Math.floor((bullet.bulletY)/40)][Math.floor((bullet.bulletX)/40)])==2)&&(bullet.whoseBullet==2)){
-					//deleteElement(that.gameDiv,bullet.bulletDiv);					
-					//do nothing villain shooting villain
+					
 					bullet.bulletDelete=true;
 				}else if(((map[Math.floor((bullet.bulletY)/40)][Math.floor((bullet.bulletX)/40)])==1)&&(bullet.whoseBullet==1)){
 					bullet.bulletDelete=true;
 				}else if(((map[Math.floor((bullet.bulletY)/40)][Math.floor((bullet.bulletX)/40)])==1)&&(bullet.whoseBullet==2)){
 						
-						that.gameDiv.removeChild(hero.heroDiv);	
+						gameDiv.removeChild(hero.heroDiv);	
 						bullet.bulletDelete=true;		
 						alert("Game Over!!Press Ok to play again");
 						window.location.reload();		
-					//do nothing villain shooting villain
+					
 				}else if(((map[Math.floor((bullet.bulletY)/40)][Math.floor((bullet.bulletX)/40)])==8)){
-					//deleteElement(that.gameDiv,bullet.bulletDiv);					
-					//do nothing villain shooting villain
+					
 					alert("Game Over!!Press Ok to play again");
 					window.location.reload();
 
@@ -2653,10 +2299,11 @@
 					
 		};
 
+		var index=0;
+
 		var fireBullet=function(obj){
 			if(heroFired){
 				if(bulletFlag==0){
-					console.log("A pressed to shoot a bullet");
 					var bullet=new Bullet();				
 					bullet.bulletDirection=heroDirection;
 					var x=0;
@@ -2687,76 +2334,49 @@
 					var k=GenerateBulletId(bullet.whoseBullet);
 					bullet.id=k;
 
-					that.gameDiv.appendChild(bullet.bulletDiv);
+					gameDiv.appendChild(bullet.bulletDiv);
 
 					heroBullets.push(bullet);
+					var bullet1=bullet;
 
-					var render=function(){													
-
-						// for(var i=0;i<heroBullets.length;i++){	
-						// 	var bullet=heroBullets[i];
-							//index=i;
-								if(bullet.bulletY<=0 || (bullet.bulletY>=(gameProps.height-bullet.height)) || (bullet.bulletDelete)){
-									that.gameDiv.removeChild(bullet.bulletDiv);
+					var render=function(){							
+							for(var i=0;i<heroBullets.length;i++){	
+								var bullet=heroBullets[i];
+								  var index=i;
+								 	 					
+								if((bullet.bulletX>0 && (bullet.bulletX<gameProps.width)) && ((bullet.bulletY>0) && (bullet.bulletY<gameProps.height)) ){								
+									moveBullets(bullet.bulletDirection,bullet);
+									bullet.bulletDiv.style.left=bullet.bulletX+'px';	
+									bullet.bulletDiv.style.top=bullet.bulletY+'px';
+								}
+								if(bullet.bulletY<=0 || (bullet.bulletY>=(gameProps.height))|| (bullet.bulletX<=0) || (bullet.bulletX>=(gameProps.width)) || (bullet.bulletDelete)){
+									
+									gameDiv.removeChild(bullet.bulletDiv);									 	
 									var j=findBulletById(heroBullets,bullet.id);									
 									heroBullets.splice(j,1);
-									delete bullet.height;
-									delete bullet.width;
-									delete bullet.bulletX;
-									delete bullet.bulletY;
-								//clearInterval(movebullet);
-
-							}else if(bullet.bulletX<=0 || (bullet.bulletX>=(gameProps.width-bullet.width))||(bullet.bulletDelete)){
-								that.gameDiv.removeChild(bullet.bulletDiv);
-								var j=findBulletById(heroBullets,bullet.id);									
-								heroBullets.splice(j,1);
-								delete bullet.height;
-								delete bullet.width;
-								delete bullet.bulletX;
-								delete bullet.bulletY;
-								//clearInterval(movebullet);
-							}else{
-								moveBullets(bullet.bulletDirection,bullet);
+								
+									clearInterval(movebullet);
+								}
 							}
-					
-							bullet.bulletDiv.style.left=bullet.bulletX+'px';	
-							bullet.bulletDiv.style.top=bullet.bulletY+'px';
 
-							
-							
-							// requestAnimationFrame(render);
-						//}	
-
+						
+						
 					};
 
-					// window.requestAnimFrame = (function(){
-					//   		return  window.requestAnimationFrame       ||
-					//           window.webkitRequestAnimationFrame ||
-					//           window.mozRequestAnimationFrame    ||
-					//           function( callback ){
-					//             window.setTimeout(callback, 1000 / 50);
-					//           };
-					// })();
-
-					
-
-					//var myReq=window.requestAnimationFrame(render);
-
-					var movebullet=setInterval(render,100);
+					var movebullet=setInterval(render,50);
 
 					bulletFlag=1;
 					}
-
 				}else if(mainvillainFired){
 					var bullet=new Bullet();				
-					bullet.bulletDirection=heroDirection;
+					bullet.bulletDirection=3;
 					var x=0;
 					var y=0;
 
 					bullet.whoseBullet=3;
 
 					var setmainvillainBullet=function(){
-						x=mainvillain.x+95;
+						x=mainvillain.x+80;
 						y=mainvillain.height;						
 					}();
 
@@ -2764,43 +2384,28 @@
 					var k=GenerateBulletId(bullet.whoseBullet);
 					bullet.id=k;
 						
-					that.gameDiv.appendChild(bullet.bulletDiv);
+					gameDiv.appendChild(bullet.bulletDiv);
 					villainBullets.push(bullet);
 
-					var render=function(){
-						//bullet.shootBullet(3);	
-						// for(var i=0;i<villainBullets.length;i++){	
-						// 	var bullet=villainBullets[i];
-
-						// 	index=i;
-							moveBullets(bullet.bulletDirection,bullet);
-
-							
-							if((bullet.bulletY+bullet.height)==(bullet.height)||(bullet.bulletY==(gameProps.height-bullet.height))||(bullet.bulletDelete)){
-								that.gameDiv.removeChild(bullet.bulletDiv);
+					var render=function(){											
+						 	 					
+							if((bullet.bulletX>0 && (bullet.bulletX<gameProps.width)) && ((bullet.bulletY>0) && (bullet.bulletY<gameProps.height)) ){								
+								moveBullets(bullet.bulletDirection,bullet);
+								bullet.bulletDiv.style.left=bullet.bulletX+'px';	
+								bullet.bulletDiv.style.top=bullet.bulletY+'px';
+							}
+							if(bullet.bulletY<=0 || (bullet.bulletY>=(gameProps.height))|| (bullet.bulletX<=0) || (bullet.bulletX>=(gameProps.width)) || (bullet.bulletDelete)){
+								gameDiv.removeChild(bullet.bulletDiv);									 	
 								var j=findBulletById(villainBullets,bullet.id);									
 								villainBullets.splice(j,1);
-								delete bullet.height;
-								delete bullet.width;
-								//break;
-							}else if((bullet.bulletX+bullet.width)==(bullet.width)||(bullet.bulletX==(gameProps.width-bullet.width))||(bullet.bulletDelete)){
-								that.gameDiv.removeChild(bullet.bulletDiv);
-								var j=findBulletById(villainBullets,bullet.id);									
-								villainBullets.splice(j,1);
-								delete bullet.height;
-								delete bullet.width;
-								//break;
-							}	
-							bullet.bulletDiv.style.left=bullet.bulletX+'px';	
-							bullet.bulletDiv.style.top=bullet.bulletY+'px';
-						//}	
-
+								clearInterval(movebullet);
+							}
+																					
 					};
 
 					var movebullet=setInterval(render,50);
 
-				}
-				else if(villainFired){
+				}else if(villainFired){
 					var villain=obj;
 					var bullet=new Bullet();				
 					bullet.bulletDirection=villain.villainDirection;
@@ -2830,36 +2435,32 @@
 					var k=GenerateBulletId(bullet.whoseBullet);
 					bullet.id=k;
 						
-					that.gameDiv.appendChild(bullet.bulletDiv);
+					gameDiv.appendChild(bullet.bulletDiv);
 					villainBullets.push(bullet);
 
 					var render=function(){
-						//bullet.shootBullet(3);
-						// for(var i=0;i<villainBullets.length;i++){	
-						// 	var bullet=villainBullets[i];
+						for(var i=0;i<villainBullets.length;i++){	
+							var bullet=villainBullets[i];
 
 							moveBullets(bullet.bulletDirection,bullet);
 
-							if((bullet.bulletY+bullet.height)==(bullet.height)||(bullet.bulletY==(gameProps.height-bullet.height))||(bullet.bulletDelete)){
-								that.gameDiv.removeChild(bullet.bulletDiv);
+							if((bullet.bulletX>0 && (bullet.bulletX<gameProps.width)) && ((bullet.bulletY>0) && (bullet.bulletY<gameProps.height)) ){								
+									moveBullets(bullet.bulletDirection,bullet);
+									bullet.bulletDiv.style.left=bullet.bulletX+'px';	
+									bullet.bulletDiv.style.top=bullet.bulletY+'px';
+								}
+							if(bullet.bulletY<=0 || (bullet.bulletY>=(gameProps.height))|| (bullet.bulletX<=0) || (bullet.bulletX>=(gameProps.width))||(bullet.bulletDelete)){
+								gameDiv.removeChild(bullet.bulletDiv);									 	
 								var j=findBulletById(villainBullets,bullet.id);									
-								villainBullets.splice(j,1);
-								delete bullet.height;
-								delete bullet.width;
-								//break;
-							}else if((bullet.bulletX+bullet.width)==(bullet.width)||(bullet.bulletX==(gameProps.width-bullet.width))||(bullet.bulletDelete)){
-								that.gameDiv.removeChild(bullet.bulletDiv);
-								var j=findBulletById(villainBullets,bullet.id);									
-								villainBullets.splice(j,1);
-								delete bullet.height;
-								delete bullet.width;
-								//break;
-							}	
-							bullet.bulletDiv.style.left=bullet.bulletX+'px';	
-							bullet.bulletDiv.style.top=bullet.bulletY+'px';
-						//}	
+								villainBullets.splice(j,1);							
+								clearInterval(movebullet);
+							}
+						}	
+						if(villainBullets.length==0){
+							clearInterval(movebullet);
+						}
 					};
-					var movebullet=setInterval(render,50);	
+					var movebullet=setInterval(render,60);	
 				}	
 		};
 
@@ -2881,15 +2482,12 @@
 				performkeyAction();
 			}		
 			
-		}
+		};
 		
-		function performkeyAction(){	
-			console.log(keytracker.length);
-			console.log(keytracker[65]+"--------"+keytracker[37]);
+		function performkeyAction(){
 			if(keytracker[40]&&keytracker[65]){
 				if(!fightmainvillainFlag){
 						if(!(heroDirection==3)){
-						console.log("down key and bullet");
 						turnDown(7,hero);
 						heroFired=true;
 						fireBullet();
@@ -2902,21 +2500,17 @@
 			}	
 			else if(keytracker[37]&&keytracker[65]){
 					if(fightmainvillainFlag){
-						console.log("4444444444444");
 						moveLeft(7,hero);
 						heroFired=true;
 						fireBullet();							
 					}
 					else{
-						if(!(heroDirection==4)){							
-							console.log("left turn and bullet");
+						if(!(heroDirection==4)){
 							turnLeft(7,hero);
 							heroFired=true;
 							fireBullet();
 						}
-						else{						
-							console.log("moving left and bullet");
-							moveLeft(7,hero);
+						else{
 							heroFired=true;
 							fireBullet();
 						}
@@ -2925,7 +2519,6 @@
 			}
 			else if(keytracker[39]&&keytracker[65]){
 				if(fightmainvillainFlag){
-					console.log("222222222222");
 					moveRight(7,hero);
 					heroFired=true;
 					fireBullet();
@@ -2935,7 +2528,6 @@
 						if((!keytracker[65])||(!keytracker[39])){
 								performkeyAction();
 						}
-						console.log("right turn and bullet");
 						turnRight(7,hero);
 						heroFired=true;
 						fireBullet();
@@ -2944,7 +2536,7 @@
 						if((!keytracker[65])||(!keytracker[39])){
 								performkeyAction();
 						}
-						console.log("moving right and bullet");
+					
 						moveRight(7,hero);
 						heroFired=true;
 						fireBullet();
@@ -2953,13 +2545,11 @@
 			}
 			else if(keytracker[38]&&keytracker[65]){
 				if(!fightmainvillainFlag){
-					if(!(heroDirection==1)){
-						console.log("up turn and bullet");
+					if(!(heroDirection==1)){				
 						turnUp(7,hero);
 						heroFired=true;
 						fireBullet();
 					}else{
-						console.log("moving up and bullet");
 						moveUp(7,hero);
 						heroFired=true;
 						fireBullet();
@@ -2968,8 +2558,7 @@
 			}
 			else if(keytracker[38]){
 				if(!fightmainvillainFlag){
-					if(!(heroDirection==1)){
-						console.log("up turn");
+					if(!(heroDirection==1)){					
 						turnUp(7,hero);
 					}else{						
 							moveUp(7,hero);							
@@ -2980,11 +2569,9 @@
 			else if(keytracker[39]){
 				if(fightmainvillainFlag){
 					moveRight(7,hero);
-					console.log("22");
 				}
 				else{	
 					if(!(heroDirection==2)){
-						console.log("right turn");
 						turnRight(7,hero);
 					}else{
 						moveRight(7,hero);
@@ -2994,11 +2581,9 @@
 			else if(keytracker[37]){
 				if(fightmainvillainFlag){
 					moveLeft(7,hero);
-					console.log("44");
 				}
 				else{
 					if(!(heroDirection==4)){
-						console.log("left turn");
 						turnLeft(7,hero);
 					}else{
 						moveLeft(7,hero);
@@ -3008,7 +2593,6 @@
 			else if(keytracker[40]){
 				if(!fightmainvillainFlag){
 					if(!(heroDirection==3)){
-						console.log("down turn");
 						turnDown(7,hero);
 					}else{
 						moveDown(7,hero);
@@ -3018,7 +2602,6 @@
 			else if(keytracker[65]){
 				heroFired=true;
 				fireBullet();
-				console.log("firing bullets");
 			}
 
 			
@@ -3026,7 +2609,6 @@
 		window.onkeyup=function(event){
 			if(event.which==37){
 				//keytracker.splice(37,1);
-				console.log("left key unpressed");
 				//performkeyAction();
 				//keytracker[37]=false;
 				keytracker=[];
@@ -3034,27 +2616,23 @@
 			else if(event.which==38){
 				keytracker.splice(38,1);
 				//keytracker[38]=false;
-				console.log("up key unpressed");
 				//performkeyAction();
 				keytracker=[];
 			}
 			else if(event.which==39){
 				keytracker.splice(39,1);
 				//keytracker[39]=false;
-				console.log("right key unpressed");
 				//performkeyAction();
 				keytracker=[];
 			}
 			else if(event.which==40){
 				keytracker.splice(40,1);
 				//keytracker[40]=false;
-				console.log("down key unpressed");
 				//performkeyAction();
 				keytracker=[];
 			}			
 			else if(event.which==65){
 				//keytracker.splice(65,1);
-				console.log("fire key unpressed");
 				keytracker[65]=false;
 				bulletFlag=0;
 				heroFired=false;
@@ -3066,27 +2644,20 @@
 		};
 
 
-		
-		//var gameinterval=setInterval(gameLoop,interval);
 		gameSetup();
 
 		function GameStarter(){
-			if(reachLevel2==1){			
-				fightmainvillainFlag=true;			
-				clearDiv(that.gameDiv);	//Clears the div for next level
-				gameLoop();			
-			}
-			else{
-				
-				console.log(gameStart);
-				if(gameStart){
+			if(fightmainvillainFlag){			
+				clearInterval(gameinterval);
+				clearDiv(gameDiv);	
+				gameLoop();	
+			}else{
 					var gameinterval=setInterval(gameLoop,interval);
-				}
-
-								
-		     }	
+			}
 		};
 		
+
+
 		// window.onerror = function(){
 		//    return true;
 		// };
